@@ -38,17 +38,17 @@ enum Constants {
     }
     
     enum Icons {
-        static let search = Image("")
+        static let search = Image(systemName: "magnifyingglass")
         static let home =  Image(systemName: "house")
         static let categories = Image(systemName: "square.grid.2x2")
         static let bookmark = Image(systemName: "bookmark")
         static let bookmarkOn = Image(systemName: "bookmark.fill")
         static let profile = Image(systemName: "person")
-        static let signOut = Image("")
-        static let shared = Image("")
-        static let leftArrow = Image("")
-        static let rightArrow = Image("")
-        static let checkMark = Image("")
+        static let signOut = Image(systemName: "door.left.hand.open")
+        static let shared = Image(systemName: "arrowshape.turn.up.right")
+        static let leftArrow = Image(systemName: "arrow.left")
+        static let rightArrow = Image(systemName: "chevron.right")
+        static let checkMark = Image(systemName: "checkmark")
     }
     
     enum Backgrounds {
