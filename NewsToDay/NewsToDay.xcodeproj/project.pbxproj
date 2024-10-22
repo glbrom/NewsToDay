@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ADAC114F2CC740FA00E18AA7 /* DefaultButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAC114E2CC740EE00E18AA7 /* DefaultButtonView.swift */; };
 		EB7CD7812CC644F700E4DCB4 /* NewsToDayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7CD7802CC644F700E4DCB4 /* NewsToDayApp.swift */; };
 		EB7CD7832CC644F700E4DCB4 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7CD7822CC644F700E4DCB4 /* MainTabView.swift */; };
 		EB7CD7852CC644FA00E4DCB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB7CD7842CC644FA00E4DCB4 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ADAC114E2CC740EE00E18AA7 /* DefaultButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButtonView.swift; sourceTree = "<group>"; };
 		EB7CD77D2CC644F700E4DCB4 /* NewsToDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsToDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7CD7802CC644F700E4DCB4 /* NewsToDayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsToDayApp.swift; sourceTree = "<group>"; };
 		EB7CD7822CC644F700E4DCB4 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ADAC114D2CC740D300E18AA7 /* DefaultButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				ADAC114E2CC740EE00E18AA7 /* DefaultButtonView.swift */,
+			);
+			path = DefaultButtonView;
+			sourceTree = "<group>";
+		};
 		EB7CD7742CC644F700E4DCB4 = {
 			isa = PBXGroup;
 			children = (
@@ -72,12 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				EB7CD7942CC64BC600E4DCB4 /* App */,
-				EB7CD7912CC64A4500E4DCB4 /* Model */,
 				EB7CD7932CC64A5500E4DCB4 /* Views */,
-				EB7CD7922CC64A4E00E4DCB4 /* ViewModel */,
 				EB7CD7952CC64D5400E4DCB4 /* NetworkManager */,
 				EB7CD7962CC64DB100E4DCB4 /* Helpers */,
-				EB7CD7902CC64A3600E4DCB4 /* Extensions */,
 				EB7CD7842CC644FA00E4DCB4 /* Assets.xcassets */,
 				EB7CD7862CC644FA00E4DCB4 /* Preview Content */,
 			);
@@ -90,27 +97,6 @@
 				EB7CD7872CC644FA00E4DCB4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		EB7CD7902CC64A3600E4DCB4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		EB7CD7912CC64A4500E4DCB4 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		EB7CD7922CC64A4E00E4DCB4 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		EB7CD7932CC64A5500E4DCB4 /* Views */ = {
@@ -165,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				EB7CD7B22CC65E6F00E4DCB4 /* View */,
-				EB7CD7B32CC65E7500E4DCB4 /* Subviews */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -182,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				EB7CD7B52CC65EDB00E4DCB4 /* View */,
-				EB7CD7B42CC65ED200E4DCB4 /* Subviews */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -191,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				EB7CD7BB2CC65F8D00E4DCB4 /* View */,
-				EB7CD7BA2CC65F8700E4DCB4 /* Subviews */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -200,7 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				EB7CD7B82CC65F4000E4DCB4 /* View */,
-				EB7CD7B92CC65F4500E4DCB4 /* Subviews */,
 			);
 			path = Bookmarks;
 			sourceTree = "<group>";
@@ -209,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				EB7CD7B72CC65F3700E4DCB4 /* View */,
-				EB7CD7B62CC65F3000E4DCB4 /* Subviews */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -234,22 +215,9 @@
 			isa = PBXGroup;
 			children = (
 				EB7CD7A42CC65DF600E4DCB4 /* OnBoarding.swift */,
+				ADAC114D2CC740D300E18AA7 /* DefaultButtonView */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		EB7CD7B32CC65E7500E4DCB4 /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Subviews;
-			sourceTree = "<group>";
-		};
-		EB7CD7B42CC65ED200E4DCB4 /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Subviews;
 			sourceTree = "<group>";
 		};
 		EB7CD7B52CC65EDB00E4DCB4 /* View */ = {
@@ -258,13 +226,6 @@
 				EB7CD7A62CC65E0B00E4DCB4 /* HomePage.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		EB7CD7B62CC65F3000E4DCB4 /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Subviews;
 			sourceTree = "<group>";
 		};
 		EB7CD7B72CC65F3700E4DCB4 /* View */ = {
@@ -281,20 +242,6 @@
 				EB7CD7AC2CC65E3E00E4DCB4 /* Bookmarks.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		EB7CD7B92CC65F4500E4DCB4 /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Subviews;
-			sourceTree = "<group>";
-		};
-		EB7CD7BA2CC65F8700E4DCB4 /* Subviews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Subviews;
 			sourceTree = "<group>";
 		};
 		EB7CD7BB2CC65F8D00E4DCB4 /* View */ = {
@@ -376,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB7CD7A32CC65DE300E4DCB4 /* SplashScreen.swift in Sources */,
+				ADAC114F2CC740FA00E18AA7 /* DefaultButtonView.swift in Sources */,
 				EB7CD7AD2CC65E3E00E4DCB4 /* Bookmarks.swift in Sources */,
 				EB7CD7A92CC65E1A00E4DCB4 /* DetailView.swift in Sources */,
 				EB7CD78F2CC647FB00E4DCB4 /* NetworkManager.swift in Sources */,
