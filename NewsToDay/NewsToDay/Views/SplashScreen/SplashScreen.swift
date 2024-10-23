@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SplashScreen: View {
-    
     // MARK: - Properties
     @State private var isActive = false
     
@@ -22,17 +21,15 @@ struct SplashScreen: View {
                 Constants.Backgrounds.darkBlueBackground.ignoresSafeArea()
                 VStack {
                     Text("News")
-                        .font(Font.system(size: 64))
-                        .font(.title)
-                        .fontWeight(.medium)
+                        .font(.custom("Adamina-Regular", size: 64))
                         .foregroundColor(Constants.Colors.purpleLighter)
                         .padding(EdgeInsets(top: 303, leading: 58, bottom: 0, trailing: 131))
+                        .shadow(color: Constants.Colors.blackDark, radius: 4, x: 2, y: 2)
                     Text("ToDay")
-                        .font(Font.system(size: 64))
-                        .font(.title)
-                        .fontWeight(.medium)
+                        .font(.custom("Adamina-Regular", size: 64))
                         .foregroundColor(Constants.Colors.purpleLighter)
                         .padding(EdgeInsets(top: 0, leading: 131, bottom: 400, trailing: 58))
+                        .shadow(color: Constants.Colors.blackDark, radius: 4, x: 2, y: 2)
                 }
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {

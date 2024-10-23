@@ -17,10 +17,7 @@ struct ActionButtonView: View {
     var body: some View {
         Button(action: action) {
             Text(buttonText)
-                .font(
-                    Font.custom("Inter", size: 16)
-                        .weight(.semibold)
-                )
+                .font(.interFont(.semiBold, size: 16))
                 .frame(width: 336, height: 56)
                 .background(Constants.Colors.purplePrimary)
                 .cornerRadius(12)
