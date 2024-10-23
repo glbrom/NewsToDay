@@ -25,6 +25,12 @@
 		EB8638412CC9200000EEE0F0 /* PageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8638402CC9200000EEE0F0 /* PageIndicatorView.swift */; };
 		EB8638432CC920AC00EEE0F0 /* ActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8638422CC920AC00EEE0F0 /* ActionButtonView.swift */; };
 		EB8638452CC920FB00EEE0F0 /* TextContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8638442CC920FB00EEE0F0 /* TextContentView.swift */; };
+		EB8638482CC93D2900EEE0F0 /* CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8638472CC93D2900EEE0F0 /* CustomFonts.swift */; };
+		EB86384E2CC93E4200EEE0F0 /* Inter-semiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB86384A2CC93E4100EEE0F0 /* Inter-semiBold.otf */; };
+		EB86384F2CC93E4200EEE0F0 /* Inter-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB86384B2CC93E4200EEE0F0 /* Inter-regular.otf */; };
+		EB8638502CC93E4200EEE0F0 /* Inter-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB86384C2CC93E4200EEE0F0 /* Inter-bold.otf */; };
+		EB8638532CC9426000EEE0F0 /* Inter-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB8638522CC9425F00EEE0F0 /* Inter-medium.otf */; };
+		EB8638552CC945DC00EEE0F0 /* Adamina-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB8638542CC945DC00EEE0F0 /* Adamina-regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +53,13 @@
 		EB8638402CC9200000EEE0F0 /* PageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicatorView.swift; sourceTree = "<group>"; };
 		EB8638422CC920AC00EEE0F0 /* ActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonView.swift; sourceTree = "<group>"; };
 		EB8638442CC920FB00EEE0F0 /* TextContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextContentView.swift; sourceTree = "<group>"; };
+		EB8638472CC93D2900EEE0F0 /* CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFonts.swift; sourceTree = "<group>"; };
+		EB86384A2CC93E4100EEE0F0 /* Inter-semiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-semiBold.otf"; sourceTree = "<group>"; };
+		EB86384B2CC93E4200EEE0F0 /* Inter-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-regular.otf"; sourceTree = "<group>"; };
+		EB86384C2CC93E4200EEE0F0 /* Inter-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-bold.otf"; sourceTree = "<group>"; };
+		EB8638512CC93EC400EEE0F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EB8638522CC9425F00EEE0F0 /* Inter-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-medium.otf"; sourceTree = "<group>"; };
+		EB8638542CC945DC00EEE0F0 /* Adamina-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adamina-regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +92,7 @@
 		EB7CD77F2CC644F700E4DCB4 /* NewsToDay */ = {
 			isa = PBXGroup;
 			children = (
+				EB8638512CC93EC400EEE0F0 /* Info.plist */,
 				EB7CD7942CC64BC600E4DCB4 /* App */,
 				EB7CD7912CC64A4500E4DCB4 /* Model */,
 				EB7CD7932CC64A5500E4DCB4 /* Views */,
@@ -86,6 +100,7 @@
 				EB7CD7952CC64D5400E4DCB4 /* NetworkManager */,
 				EB7CD7962CC64DB100E4DCB4 /* Helpers */,
 				EB7CD7902CC64A3600E4DCB4 /* Extensions */,
+				EB8638462CC93CEE00EEE0F0 /* Fonts */,
 				EB7CD7842CC644FA00E4DCB4 /* Assets.xcassets */,
 				EB7CD7862CC644FA00E4DCB4 /* Preview Content */,
 			);
@@ -103,6 +118,7 @@
 		EB7CD7902CC64A3600E4DCB4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				EB8638472CC93D2900EEE0F0 /* CustomFonts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -317,6 +333,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		EB8638462CC93CEE00EEE0F0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EB8638542CC945DC00EEE0F0 /* Adamina-regular.ttf */,
+				EB86384C2CC93E4200EEE0F0 /* Inter-bold.otf */,
+				EB8638522CC9425F00EEE0F0 /* Inter-medium.otf */,
+				EB86384B2CC93E4200EEE0F0 /* Inter-regular.otf */,
+				EB86384A2CC93E4100EEE0F0 /* Inter-semiBold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -376,7 +404,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB7CD7882CC644FA00E4DCB4 /* Preview Assets.xcassets in Resources */,
+				EB8638552CC945DC00EEE0F0 /* Adamina-regular.ttf in Resources */,
+				EB8638532CC9426000EEE0F0 /* Inter-medium.otf in Resources */,
+				EB86384F2CC93E4200EEE0F0 /* Inter-regular.otf in Resources */,
 				EB7CD7852CC644FA00E4DCB4 /* Assets.xcassets in Resources */,
+				EB86384E2CC93E4200EEE0F0 /* Inter-semiBold.otf in Resources */,
+				EB8638502CC93E4200EEE0F0 /* Inter-bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +430,7 @@
 				EB7CD7B12CC65E5F00E4DCB4 /* TermsConditions.swift in Sources */,
 				EB7CD7812CC644F700E4DCB4 /* NewsToDayApp.swift in Sources */,
 				EB7CD7AB2CC65E2800E4DCB4 /* Categories.swift in Sources */,
+				EB8638482CC93D2900EEE0F0 /* CustomFonts.swift in Sources */,
 				EB7CD7A52CC65DF600E4DCB4 /* OnBoarding.swift in Sources */,
 				EB8638452CC920FB00EEE0F0 /* TextContentView.swift in Sources */,
 				EB7CD7AF2CC65E4A00E4DCB4 /* Profile.swift in Sources */,
@@ -539,6 +573,7 @@
 				DEVELOPMENT_TEAM = 3XK355J24V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewsToDay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -571,6 +606,7 @@
 				DEVELOPMENT_TEAM = 3XK355J24V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NewsToDay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
