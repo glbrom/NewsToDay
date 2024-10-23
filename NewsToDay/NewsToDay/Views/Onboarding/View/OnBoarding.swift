@@ -8,58 +8,45 @@
 import SwiftUI
 
 struct OnBoarding: View {
-    var square: String = "square"
-    var city: String = "city"
-    var firstToKnow: String = "First to know"
-    var titleText: String =  "All news in one place, be\n the first to know last news"
+    // MARK: - Properties
+    @State private var currentStep = 1
+    @State private var isMainTabViewActive = false
+    @State private var dragOffset: CGFloat = 0
     
+    private let itemWidth: CGFloat = 288
+    private let peekAmount: CGFloat = 20
+    private let dragThreshold: CGFloat = 0
+    
+    // MARK: - Body
     var body: some View {
-        NavigationView{
+        NavigationView {
             VStack {
-                Spacer()
-                    .frame(height: 50)
+                // ImageCarousel
+                ImageCarouselView(currentStep: $currentStep, dragOffset: $dragOffset, itemWidth: itemWidth, peekAmount: peekAmount, dragThreshold: dragThreshold)
                 
+                // PageIndicator
+                PageIndicatorView(currentStep: $currentStep)
+                    .padding(.bottom, 34)
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
-                        Image(square)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 288, height: 366)
-                        
-                        Image(city)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 288, height: 366)
+                // TextContent
+                TextContentView(currentStep: $currentStep)
+                    .padding(.bottom, 64)
+                
+                // ActionButton
+                ActionButtonView(buttonText: currentStep < 3 ? "Next" : "Get started") {
+                    if currentStep < 3 {
+                        withAnimation(.easeInOut) {
+                            currentStep += 1
+                        }
+                    } else {
+                        isMainTabViewActive = true
                     }
-                    .padding(.horizontal, 20)
-                    
-                    .frame(maxWidth: .infinity)
                 }
-                .frame(height: 366)
-                
-                
-               customProgressView(activeIndex: 0, totalSteps: 3)
-                    .padding(.top, 20)
-                
-                
-                Text(firstToKnow)
-                    .foregroundColor(.blackPrimary)
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .padding(.top, 20)
-                
-                Spacer()
-                Text(titleText)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 20)
-                
-                Spacer()
-                DefaultButtonView()
-                    .padding(.trailing,2)
-                    .padding(.bottom, 20)
+                .padding(.bottom, 16)
+                .fullScreenCover(isPresented: $isMainTabViewActive, content: {
+                    MainTabView()
+                })
             }
-            .frame(maxWidth: .infinity)
         }
     }
 }
@@ -67,21 +54,3 @@ struct OnBoarding: View {
 #Preview {
     OnBoarding()
 }
-
-func customProgressView(activeIndex: Int, totalSteps: Int) -> some View {
-      HStack(spacing: 12) {
-          ForEach(0..<totalSteps, id: \.self) { index in
-              if index == activeIndex {
-                  
-                  Capsule()
-                      .fill(Color.blue)
-                      .frame(width: 24, height: 8)
-              } else {
-                
-                  Circle()
-                      .fill(Color.gray.opacity(0.2))
-                      .frame(width: 8, height: 8)
-              }
-          }
-      }
-  }
