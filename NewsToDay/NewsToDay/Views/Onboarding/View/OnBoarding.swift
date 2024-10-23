@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct OnBoarding: View {
+    var square: String = "square"
+    var city: String = "city"
+    var firstToKnow: String = "First to know"
+    var titleText: String =  "All news in one place, be\n the first to know last news"
     
     var body: some View {
         NavigationView{
@@ -18,12 +22,12 @@ struct OnBoarding: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
-                        Image("square")
+                        Image(square)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 288, height: 366)
                         
-                        Image("city")
+                        Image(city)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 288, height: 366)
@@ -39,14 +43,14 @@ struct OnBoarding: View {
                     .padding(.top, 20)
                 
                 
-                Text("First to know")
+                Text(firstToKnow)
                     .foregroundColor(.blackPrimary)
                     .font(.title)
                     .fontWeight(.semibold)
                     .padding(.top, 20)
                 
                 Spacer()
-                Text("All news in one place, be\n the first to know last news")
+                Text(titleText)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 20)
                 
