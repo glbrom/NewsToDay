@@ -33,6 +33,7 @@
 		EB8638502CC93E4200EEE0F0 /* Inter-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB86384C2CC93E4200EEE0F0 /* Inter-bold.otf */; };
 		EB8638532CC9426000EEE0F0 /* Inter-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB8638522CC9425F00EEE0F0 /* Inter-medium.otf */; };
 		EB8638552CC945DC00EEE0F0 /* Adamina-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB8638542CC945DC00EEE0F0 /* Adamina-regular.ttf */; };
+		EBB7B64E2CCB00CA00B09792 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB7B64D2CCB00CA00B09792 /* LoginPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		EB8638512CC93EC400EEE0F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EB8638522CC9425F00EEE0F0 /* Inter-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-medium.otf"; sourceTree = "<group>"; };
 		EB8638542CC945DC00EEE0F0 /* Adamina-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adamina-regular.ttf"; sourceTree = "<group>"; };
+		EBB7B64D2CCB00CA00B09792 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 		EB7CD7932CC64A5500E4DCB4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EBB7B64C2CCB00B300B09792 /* LoginPage */,
 				EB7CD7992CC65B2F00E4DCB4 /* SplashScreen */,
 				EB7CD79A2CC65B3F00E4DCB4 /* Onboarding */,
 				EB7CD79B2CC65B8C00E4DCB4 /* MainTabView */,
@@ -351,6 +354,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		EBB7B64C2CCB00B300B09792 /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+				EBB7B64D2CCB00CA00B09792 /* LoginPageView.swift */,
+			);
+			path = LoginPage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -446,6 +457,7 @@
 				EB7CD7A72CC65E0B00E4DCB4 /* HomePage.swift in Sources */,
 				EB7CD7982CC64FF300E4DCB4 /* Constants.swift in Sources */,
 				EB86383F2CC917A300EEE0F0 /* ImageCarouselView.swift in Sources */,
+				EBB7B64E2CCB00CA00B09792 /* LoginPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
