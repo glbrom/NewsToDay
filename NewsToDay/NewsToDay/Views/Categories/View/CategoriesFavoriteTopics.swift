@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CategoriesFavoriteTopics: View {
+    // MARK: - Properties
+    @State private var isMainTabViewActive = false
     
     // MARK: - Body
     var body: some View {
@@ -20,9 +22,12 @@ struct CategoriesFavoriteTopics: View {
                     .padding(.top, 32)
             }
             
-            ActionButtonView(buttonText: "Next", action: {})
+            ActionButtonView(buttonText: "Next", action: { isMainTabViewActive = true})
                 .padding(.bottom, 16)
         }
+        .fullScreenCover(isPresented: $isMainTabViewActive, content: {
+            MainTabView()
+        })
     }
 }
 
