@@ -8,34 +8,48 @@
 import SwiftUI
 
 struct MainTabView: View {
+    // MARK: - Properties
+    @State private var selectedTab = 0
+    
+    // MARK: - Body
     var body: some View {
-        TabView {
-            HomePage()
-                .tabItem {
-                    Constants.Icons.home
-                }
+        ZStack {
+            TabView(selection: $selectedTab) {
+                HomePage()
+                    .tabItem {
+                        Constants.Icons.home
+                    }
+                    .tag(0)
                 
-                .tag(0)
-            
-            Categories()
-                .tabItem {
-                    Constants.Icons.categories
-                }
+                Categories()
+                    .tabItem {
+                        Constants.Icons.categories
+                    }
+                    .tag(1)
                 
-                .tag(1)
-            
-            Bookmarks()
-                .tabItem {
-                    Constants.Icons.bookmark
-                }
+                Bookmarks()
+                    .tabItem {
+                        Constants.Icons.bookmark
+                    }
+                    .tag(2)
                 
-                .tag(2)
+                Profile()
+                    .tabItem {
+                        Constants.Icons.profile
+                    }
+                    .tag(3)
+            }
+            .accentColor(Constants.Colors.purplePrimary)
             
-            Profile()
-                .tabItem {
-                    Constants.Icons.profile
-                }
-                .tag(3)
+            VStack {
+                Spacer()
+                
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Constants.Colors.greyLighter, lineWidth: 2)
+                    .frame(height: 96)
+                    .background(Color.clear)
+            }
+            .ignoresSafeArea()
         }
     }
 }

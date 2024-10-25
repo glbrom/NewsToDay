@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct Categories: View {
+    
+    // MARK: - Body
     var body: some View {
-        Text("Categories")
+        VStack {
+            TitleWithDescription(title: "Categories", description: "Thousands of articles in each category")
+                .padding(.top, 28)
+            
+            ScrollView {
+                CategoriesButtons()
+                    .padding(.top, 32)
+            }
+        }
     }
 }
 
