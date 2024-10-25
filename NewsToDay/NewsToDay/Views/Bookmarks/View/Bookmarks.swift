@@ -19,12 +19,12 @@ struct Bookmarks: View {
         VStack(alignment: .leading) {
             Text(boookMarktext)
                 .font(.interFont(.bold, size: 24))
-                .fontWeight(.bold)
-                .padding(.top, 72)
+                .foregroundColor(.blackPrimary)
+                .padding(.top, 24)
                 .padding(.horizontal, 20)
             
             Text(article)
-                .font(.interFont(.bold, size: 16))
+                .font(.interFont(.regular, size: 16))
                 .foregroundColor(.greyPrimary)
                 .padding(.top,8)
                 .padding(.horizontal, 20)
@@ -38,7 +38,7 @@ struct Bookmarks: View {
                         Constants.Icons.bookmarkEmpty
                     }
                     .frame(width: 72, height: 72)
-                    .padding(.top,150)
+                    .padding(.top,200)
                     
                     Text(notSaved)
                         .foregroundColor(.blackPrimary)
