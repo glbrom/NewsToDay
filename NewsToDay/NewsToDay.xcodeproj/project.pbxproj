@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD4757492CCAF9420042C9D0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AD4757482CCAF9420042C9D0 /* Localizable.xcstrings */; };
 		ADAB9D472CC9C6CD001EDE00 /* BookmarkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB9D462CC9C6C4001EDE00 /* BookmarkItem.swift */; };
 		EB7CD7812CC644F700E4DCB4 /* NewsToDayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7CD7802CC644F700E4DCB4 /* NewsToDayApp.swift */; };
 		EB7CD7832CC644F700E4DCB4 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7CD7822CC644F700E4DCB4 /* MainTabView.swift */; };
@@ -40,7 +39,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AD4757482CCAF9420042C9D0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		ADAB9D462CC9C6C4001EDE00 /* BookmarkItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkItem.swift; sourceTree = "<group>"; };
 		EB7CD77D2CC644F700E4DCB4 /* NewsToDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsToDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7CD7802CC644F700E4DCB4 /* NewsToDayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsToDayApp.swift; sourceTree = "<group>"; };
@@ -73,6 +71,10 @@
 		EBE2C44B2CCBC39B0058AD2A /* CategoriesButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesButtons.swift; sourceTree = "<group>"; };
 		EBE2C44D2CCBC9450058AD2A /* CategoriesFavoriteTopics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFavoriteTopics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		AD47574A2CCB3F3A0042C9D0 /* Localization */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Localization; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		EB7CD77A2CC644F700E4DCB4 /* Frameworks */ = {
@@ -312,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				EB7CD7AE2CC65E4A00E4DCB4 /* Profile.swift */,
-				AD4757482CCAF9420042C9D0 /* Localizable.xcstrings */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,6 +360,7 @@
 				EB8638522CC9425F00EEE0F0 /* Inter-medium.otf */,
 				EB86384B2CC93E4200EEE0F0 /* Inter-regular.otf */,
 				EB86384A2CC93E4100EEE0F0 /* Inter-semiBold.otf */,
+				AD47574A2CCB3F3A0042C9D0 /* Localization */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -385,6 +387,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				AD47574A2CCB3F3A0042C9D0 /* Localization */,
 			);
 			name = NewsToDay;
 			productName = NewsToDay;
@@ -432,7 +437,6 @@
 			files = (
 				EB7CD7882CC644FA00E4DCB4 /* Preview Assets.xcassets in Resources */,
 				EB8638552CC945DC00EEE0F0 /* Adamina-regular.ttf in Resources */,
-				AD4757492CCAF9420042C9D0 /* Localizable.xcstrings in Resources */,
 				EB8638532CC9426000EEE0F0 /* Inter-medium.otf in Resources */,
 				EB86384F2CC93E4200EEE0F0 /* Inter-regular.otf in Resources */,
 				EB7CD7852CC644FA00E4DCB4 /* Assets.xcassets in Resources */,

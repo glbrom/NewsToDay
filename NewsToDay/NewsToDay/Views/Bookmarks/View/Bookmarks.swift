@@ -18,6 +18,7 @@ struct Bookmarks: View {
     
     // MARK: - Body
     var body: some View {
+      
         VStack {
             
             TitleWithDescription(title: boookMarktext, description: article)
