@@ -9,8 +9,8 @@ import SwiftUI
 
 struct TitleWithDescription: View {
     // MARK: - Properties
-    var title: String
-    var description: String
+    var title: LocalizedStringKey
+    var description: LocalizedStringKey
     
     // MARK: - Body
     var body: some View {
