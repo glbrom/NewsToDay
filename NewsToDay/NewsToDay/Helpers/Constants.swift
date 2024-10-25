@@ -24,18 +24,29 @@ enum Constants {
         static let purplePrimary = Color(.purplePrimary)
     }
     
-    enum IconsEmojiCategories {
-        static let sports = Image("🏈")
-        static let politics = Image("⚖️")
-        static let life = Image("🌞")
-        static let gaming = Image("🎮")
-        static let animals = Image("🐻")
-        static let nature = Image("🌴")
-        static let food = Image("🌴")
-        static let art = Image("🎨")
-        static let history = Image("📜")
-        static let fashion = Image("👗")
+    enum IconsEmojiCategories: String {
+        case sports = "🏈 Sports"
+        case politics = "⚖️ Politics"
+        case life = "🌞 Life"
+        case gaming = "🎮 Gaming"
+        case animals = "🐻 Animals"
+        case nature = "🌴 Nature"
+        case food = "🍔 Food"
+        case art = "🎨 Art"
+        case history = "📜 History"
+        case fashion = "👗 Fashion"
+        case covid19 = "😷 Covid-19"
+        case middleEast = "⚔️ Middle East"
     }
+    
+    static let buttonArray: [[IconsEmojiCategories]] = [
+            [.sports, .politics],
+            [.life, .gaming],
+            [.animals, .nature],
+            [.food, .art],
+            [.history, .fashion],
+            [.covid19, .middleEast]
+        ]
     
     enum Icons {
         static let search = Image("Search")

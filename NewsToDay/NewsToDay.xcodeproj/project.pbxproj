@@ -33,6 +33,9 @@
 		EB8638532CC9426000EEE0F0 /* Inter-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB8638522CC9425F00EEE0F0 /* Inter-medium.otf */; };
 		EB8638552CC945DC00EEE0F0 /* Adamina-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB8638542CC945DC00EEE0F0 /* Adamina-regular.ttf */; };
 		EBB7B64E2CCB00CA00B09792 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB7B64D2CCB00CA00B09792 /* LoginPageView.swift */; };
+		EBE2C44A2CCBC33C0058AD2A /* TitleWithDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2C4492CCBC33C0058AD2A /* TitleWithDescription.swift */; };
+		EBE2C44C2CCBC39B0058AD2A /* CategoriesButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2C44B2CCBC39B0058AD2A /* CategoriesButtons.swift */; };
+		EBE2C44E2CCBC9450058AD2A /* CategoriesFavoriteTopics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2C44D2CCBC9450058AD2A /* CategoriesFavoriteTopics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		EB8638522CC9425F00EEE0F0 /* Inter-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-medium.otf"; sourceTree = "<group>"; };
 		EB8638542CC945DC00EEE0F0 /* Adamina-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adamina-regular.ttf"; sourceTree = "<group>"; };
 		EBB7B64D2CCB00CA00B09792 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
+		EBE2C4492CCBC33C0058AD2A /* TitleWithDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleWithDescription.swift; sourceTree = "<group>"; };
+		EBE2C44B2CCBC39B0058AD2A /* CategoriesButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesButtons.swift; sourceTree = "<group>"; };
+		EBE2C44D2CCBC9450058AD2A /* CategoriesFavoriteTopics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFavoriteTopics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -331,6 +337,8 @@
 		EB7CD7BA2CC65F8700E4DCB4 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				EBE2C4492CCBC33C0058AD2A /* TitleWithDescription.swift */,
+				EBE2C44B2CCBC39B0058AD2A /* CategoriesButtons.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -339,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				EB7CD7AA2CC65E2800E4DCB4 /* Categories.swift */,
+				EBE2C44D2CCBC9450058AD2A /* CategoriesFavoriteTopics.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -446,9 +455,11 @@
 				EB7CD7A32CC65DE300E4DCB4 /* SplashScreen.swift in Sources */,
 				EB8638412CC9200000EEE0F0 /* PageIndicatorView.swift in Sources */,
 				EB7CD7AD2CC65E3E00E4DCB4 /* Bookmarks.swift in Sources */,
+				EBE2C44A2CCBC33C0058AD2A /* TitleWithDescription.swift in Sources */,
 				EB8638432CC920AC00EEE0F0 /* ActionButtonView.swift in Sources */,
 				EB7CD7A92CC65E1A00E4DCB4 /* DetailView.swift in Sources */,
 				EB7CD78F2CC647FB00E4DCB4 /* NetworkManager.swift in Sources */,
+				EBE2C44E2CCBC9450058AD2A /* CategoriesFavoriteTopics.swift in Sources */,
 				EB7CD7832CC644F700E4DCB4 /* MainTabView.swift in Sources */,
 				EB7CD7B12CC65E5F00E4DCB4 /* TermsConditions.swift in Sources */,
 				EB7CD7812CC644F700E4DCB4 /* NewsToDayApp.swift in Sources */,
@@ -462,6 +473,7 @@
 				EB7CD7982CC64FF300E4DCB4 /* Constants.swift in Sources */,
 				EB86383F2CC917A300EEE0F0 /* ImageCarouselView.swift in Sources */,
 				EBB7B64E2CCB00CA00B09792 /* LoginPageView.swift in Sources */,
+				EBE2C44C2CCBC39B0058AD2A /* CategoriesButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

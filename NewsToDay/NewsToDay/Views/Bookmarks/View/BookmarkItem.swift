@@ -4,16 +4,18 @@
 //
 //  Created by Ylyas Abdywahytow on 10/23/24.
 //
+
 import SwiftUI
 
 struct BookmarkItem: View {
-    
+    // MARK: - Properties
     var image: String
     var category: String
     var title: String
-
+    
+    // MARK: - Body
     var body: some View {
-        HStack {
+        HStack(spacing: 16) {
             Image(image)
                 .resizable()
                 .frame(width: 96, height: 96)
@@ -23,17 +25,17 @@ struct BookmarkItem: View {
                 Text(category)
                     .foregroundColor(.greyPrimary)
                     .font(.interFont(.regular, size: 14))
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.bottom, 8)
                 Text(title)
                     .foregroundColor(.blackPrimary)
-                    .font(.interFont(.semiBold, size: 14))
+                    .font(.interFont(.semiBold, size: 16))
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .padding(.horizontal,20)
         }
-        .padding(.bottom, 16)
     }
 }
 
 #Preview {
-    BookmarkItem(image: "city", category: "", title: "")
+    BookmarkItem(image: "city", category: "Category", title: "Title")
 }
