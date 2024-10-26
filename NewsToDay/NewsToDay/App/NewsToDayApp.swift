@@ -15,7 +15,7 @@ struct NewsToDayApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            SignUp()
+            OnBoarding()
         }
     }
 }

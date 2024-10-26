@@ -12,10 +12,10 @@ struct LoginPageView: View {
     
     @State var email: String = ""
     @State var password: String = ""
-    @State private var alertMessage = ""
+    @State private var alertMessage  = ""
     @State private var showAlert = false
     @State private var navigateToMainTab = false
-    
+    @State private var navigateToSignUp = false
     
     
     
@@ -26,7 +26,9 @@ var subtitle: LocalizedStringKey = "I am happy to see you again. You can continu
     var buttonText: LocalizedStringKey = "Sign In"
     var noAccount: LocalizedStringKey = "Don’t have an account?"
     var registerText: LocalizedStringKey = "Sign Up"
-    
+    var error: String = "Error"
+    var emailAlert: String = "Please enter your email and password."
+    var ok: String = "OK"
     var body: some View {
         // MARK: - Body
            NavigationView {
@@ -70,7 +72,7 @@ var subtitle: LocalizedStringKey = "I am happy to see you again. You can continu
                    HStack {
                        Text(noAccount)
                            .foregroundColor(.blackLighter)
-                       Button(action: {}) {
+                       Button(action: {navigateToSignUp = true}) {
                            Text(registerText)
                                .foregroundColor(.blackPrimary)
                        }
@@ -78,7 +80,7 @@ var subtitle: LocalizedStringKey = "I am happy to see you again. You can continu
                    .padding(.bottom, 8)
                }
                .alert(isPresented: $showAlert) {
-                   Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                   Alert(title: Text(error), message: Text(alertMessage), dismissButton: .default(Text(ok)))
                }
                .background(
                    NavigationLink(destination: MainTabView(), isActive: $navigateToMainTab) {
@@ -86,12 +88,18 @@ var subtitle: LocalizedStringKey = "I am happy to see you again. You can continu
                    }
                    .hidden()
                )
+               .background(
+                             NavigationLink(destination: SignUp(), isActive: $navigateToSignUp) {
+                                 EmptyView()
+                             }
+                             .hidden()
+                         )
            }
        }
     
     private func LogIn() {
         if email.isEmpty || password.isEmpty {
-               alertMessage = "Please enter your email and password."
+            alertMessage = emailAlert
                showAlert = true
                return
            }

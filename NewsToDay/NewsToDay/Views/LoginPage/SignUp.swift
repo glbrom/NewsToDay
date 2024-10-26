@@ -18,6 +18,7 @@ struct SignUp: View {
     @State private var showAlert = false
     @State private var alertMessage = ""
     @State private var navigateToMainTab = false
+    @State private var navigateToLogin = false
     
     var usernameText: LocalizedStringKey = "Username"
     var promptEmail: LocalizedStringKey = "Email Address"
@@ -29,7 +30,9 @@ struct SignUp: View {
     
     var title: LocalizedStringKey = "Welcome to NewsToDay"
     var subtitle: LocalizedStringKey = "Hello, I guess you are new around here. You can start using the application after sign up."
-    
+    var matchError: String = "Passwords do not match."
+    var error: String = "Error"
+    var ok: String = "OK"
     var body: some View {
         // MARK: - Body
         NavigationView {
@@ -74,7 +77,7 @@ struct SignUp: View {
                 HStack {
                     Text(haveAccount)
                         .foregroundColor(.blackLighter)
-                    Button(action: {}) {
+                    Button(action: { navigateToLogin = true}) {
                         Text(signIn)
                             .foregroundColor(.blackPrimary)
                     }
@@ -82,7 +85,7 @@ struct SignUp: View {
                 .padding(.bottom, 8)
             }
             .alert(isPresented: $showAlert) {
-                Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                Alert(title: Text(error), message: Text(alertMessage), dismissButton: .default(Text(ok)))
             }
             .background(
                 NavigationLink(destination: MainTabView(), isActive: $navigateToMainTab) {
@@ -90,6 +93,12 @@ struct SignUp: View {
                 }
                 .hidden()
             )
+            .background(
+                          NavigationLink(destination: LoginPageView(), isActive: $navigateToLogin) {
+                              EmptyView()
+                          }
+                          .hidden()
+                      )
         }
     }
     
@@ -99,7 +108,7 @@ struct SignUp: View {
         if password == confirmPassword {
             passwordMatchError = nil
         } else {
-            passwordMatchError = "Passwords do not match."
+            passwordMatchError = matchError
         }
     }
     

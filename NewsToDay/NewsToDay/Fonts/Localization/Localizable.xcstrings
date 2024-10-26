@@ -186,7 +186,14 @@
       }
     },
     "Email Address" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Электронная почта"
+          }
+        }
+      }
     },
     "Email Adress" : {
       "localizations" : {
@@ -197,9 +204,6 @@
           }
         }
       }
-    },
-    "Error" : {
-
     },
     "First to know" : {
       "localizations" : {
@@ -275,9 +279,6 @@
         }
       }
     },
-    "OK" : {
-
-    },
     "Password" : {
       "localizations" : {
         "ru" : {
@@ -320,7 +321,14 @@
       }
     },
     "Select some of your favorite topics to let us suggest better news for you." : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выберите несколько ваших любимых тем, чтобы мы могли предложить вам более подходящие новости."
+          }
+        }
+      }
     },
     "Select your favorite topics" : {
       "localizations" : {
