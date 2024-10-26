@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct NewsToDayApp: App {
+    init(){
+        FirebaseApp.configure()
+    }
     var body: some Scene {
         WindowGroup {
-            SplashScreen()
+            SignUp()
         }
     }
 }

@@ -24,7 +24,7 @@ enum Constants {
         static let purplePrimary = Color(.purplePrimary)
     }
     
-    enum IconsEmojiCategories: String {
+    enum IconsEmojiCategories: LocalizedStringKey {
         case sports = "🏈 Sports"
         case politics = "⚖️ Politics"
         case life = "🌞 Life"
@@ -63,6 +63,8 @@ enum Constants {
         static let leftArrowWhite = Image("ArrowLeftWhite")
         static let rightArrow = Image("ArrowRight")
         static let checkMark = Image("Checkmark")
+        static let envelope = Image("envelope")
+        static let padlock = Image("padlock")
     }
     
     enum Backgrounds {

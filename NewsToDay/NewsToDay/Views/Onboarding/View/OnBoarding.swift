@@ -41,7 +41,7 @@ struct OnBoarding: View {
                     } else {
                         isMainTabViewActive = true
                     }
-                }
+                } action2: {}
                 .padding(.bottom, 16)
                 .fullScreenCover(isPresented: $isMainTabViewActive, content: {
                     MainTabView()
