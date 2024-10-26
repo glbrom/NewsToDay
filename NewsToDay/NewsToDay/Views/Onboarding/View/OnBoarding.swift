@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-    // 
+//
 struct OnBoarding: View {
     // MARK: - Properties
     @State private var currentStep = 1
@@ -42,12 +42,13 @@ struct OnBoarding: View {
                         isMainTabViewActive = true
                     }
                 } action2: {}
-                .padding(.bottom, 16)
-                .fullScreenCover(isPresented: $isMainTabViewActive, content: {
-                    MainTabView()
-                })
+                    .padding(.bottom, 16)
+                    .fullScreenCover(isPresented: $isMainTabViewActive, content: {
+                        MainTabView()
+                    })
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

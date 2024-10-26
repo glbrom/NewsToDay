@@ -51,6 +51,8 @@
 		EB8638532CC9426000EEE0F0 /* Inter-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB8638522CC9425F00EEE0F0 /* Inter-medium.otf */; };
 		EB8638552CC945DC00EEE0F0 /* Adamina-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB8638542CC945DC00EEE0F0 /* Adamina-regular.ttf */; };
 		EBB7B64E2CCB00CA00B09792 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB7B64D2CCB00CA00B09792 /* LoginPageView.swift */; };
+		EBBEA2A02CCCE5E50001BFE0 /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA29F2CCCE5E50001BFE0 /* LanguageView.swift */; };
+		EBBEA2A22CCCEB150001BFE0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBEA2A12CCCEB150001BFE0 /* HeaderView.swift */; };
 		EBE2C44A2CCBC33C0058AD2A /* TitleWithDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2C4492CCBC33C0058AD2A /* TitleWithDescription.swift */; };
 		EBE2C44C2CCBC39B0058AD2A /* CategoriesButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2C44B2CCBC39B0058AD2A /* CategoriesButtons.swift */; };
 		EBE2C44E2CCBC9450058AD2A /* CategoriesFavoriteTopics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2C44D2CCBC9450058AD2A /* CategoriesFavoriteTopics.swift */; };
@@ -89,6 +91,8 @@
 		EB8638522CC9425F00EEE0F0 /* Inter-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-medium.otf"; sourceTree = "<group>"; };
 		EB8638542CC945DC00EEE0F0 /* Adamina-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adamina-regular.ttf"; sourceTree = "<group>"; };
 		EBB7B64D2CCB00CA00B09792 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
+		EBBEA29F2CCCE5E50001BFE0 /* LanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageView.swift; sourceTree = "<group>"; };
+		EBBEA2A12CCCEB150001BFE0 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		EBE2C4492CCBC33C0058AD2A /* TitleWithDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleWithDescription.swift; sourceTree = "<group>"; };
 		EBE2C44B2CCBC39B0058AD2A /* CategoriesButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesButtons.swift; sourceTree = "<group>"; };
 		EBE2C44D2CCBC9450058AD2A /* CategoriesFavoriteTopics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFavoriteTopics.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 				EB7CD79E2CC65C0400E4DCB4 /* Bookmarks */,
 				EB7CD79F2CC65C6F00E4DCB4 /* Profile */,
 				EB7CD7A02CC65C7900E4DCB4 /* TermsConditions */,
+				EBBEA29E2CCCE5CA0001BFE0 /* LanguageView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 		EB7CD7B62CC65F3000E4DCB4 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				EBBEA2A12CCCEB150001BFE0 /* HeaderView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -414,6 +420,14 @@
 				AD6CEAD42CCC62C8007F2242 /* SignUp.swift */,
 			);
 			path = LoginPage;
+			sourceTree = "<group>";
+		};
+		EBBEA29E2CCCE5CA0001BFE0 /* LanguageView */ = {
+			isa = PBXGroup;
+			children = (
+				EBBEA29F2CCCE5E50001BFE0 /* LanguageView.swift */,
+			);
+			path = LanguageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,11 +530,13 @@
 				EB7CD7AF2CC65E4A00E4DCB4 /* Profile.swift in Sources */,
 				ADAB9D472CC9C6CD001EDE00 /* BookmarkItem.swift in Sources */,
 				EB7CD7A72CC65E0B00E4DCB4 /* HomePage.swift in Sources */,
+				EBBEA2A02CCCE5E50001BFE0 /* LanguageView.swift in Sources */,
 				EB7CD7982CC64FF300E4DCB4 /* Constants.swift in Sources */,
 				AD6CEAF62CCC808D007F2242 /* CustomTextField.swift in Sources */,
 				EB86383F2CC917A300EEE0F0 /* ImageCarouselView.swift in Sources */,
 				EBB7B64E2CCB00CA00B09792 /* LoginPageView.swift in Sources */,
 				EBE2C44C2CCBC39B0058AD2A /* CategoriesButtons.swift in Sources */,
+				EBBEA2A22CCCEB150001BFE0 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

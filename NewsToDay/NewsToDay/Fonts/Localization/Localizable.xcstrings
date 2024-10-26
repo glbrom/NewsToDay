@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     " " : {
 
     },
@@ -175,6 +178,12 @@
         }
       }
     },
+    "Dev P" : {
+
+    },
+    "devgmail.com" : {
+
+    },
     "Don’t have an account?" : {
       "localizations" : {
         "ru" : {
@@ -236,6 +245,7 @@
       }
     },
     "Hello, World!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -257,6 +267,9 @@
           }
         }
       }
+    },
+    "Language" : {
+
     },
     "News" : {
       "localizations" : {
@@ -359,6 +372,9 @@
           }
         }
       }
+    },
+    "Terms & Conditions" : {
+
     },
     "Thousands of articles in each category" : {
       "localizations" : {
