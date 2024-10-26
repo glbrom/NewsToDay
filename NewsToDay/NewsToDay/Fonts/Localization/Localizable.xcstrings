@@ -1,11 +1,128 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-
-    },
     " " : {
 
+    },
+    "⚔️ Middle East" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⚔️Ближний восток"
+          }
+        }
+      }
+    },
+    "⚖️ Politics" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⚖️ Политика"
+          }
+        }
+      }
+    },
+    "🌞 Life" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🌞 Жизнь"
+          }
+        }
+      }
+    },
+    "🌴 Nature" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🌴 Природа"
+          }
+        }
+      }
+    },
+    "🍔 Food" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🍔 Еда"
+          }
+        }
+      }
+    },
+    "🎨 Art" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎨 Искусство"
+          }
+        }
+      }
+    },
+    "🎮 Gaming" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🎮 Игры"
+          }
+        }
+      }
+    },
+    "🏈 Sports" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🏈 Спорт"
+          }
+        }
+      }
+    },
+    "🐻 Animals" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "🐻 Животные"
+          }
+        }
+      }
+    },
+    "👗 Fashion" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "👗 Мода"
+          }
+        }
+      }
+    },
+    "📜 History" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "📜 История"
+          }
+        }
+      }
+    },
+    "😷 Covid-19" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "😷 Ковид-19"
+          }
+        }
+      }
     },
     "All news in one place, be the first to know last news" : {
       "localizations" : {
@@ -13,6 +130,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Все новости в одном месте, будь первым кто узнает последние новости"
+          }
+        }
+      }
+    },
+    "Already have an account?" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уже есть аккаунт?"
           }
         }
       }
@@ -48,6 +175,36 @@
         }
       }
     },
+    "Don’t have an account?" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нету аккаунта?"
+          }
+        }
+      }
+    },
+    "Email Address" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Электронная почта"
+          }
+        }
+      }
+    },
+    "Email Adress" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Электронная почта"
+          }
+        }
+      }
+    },
     "First to know" : {
       "localizations" : {
         "ru" : {
@@ -58,12 +215,45 @@
         }
       }
     },
+    "Get started" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Начать"
+          }
+        }
+      }
+    },
+    "Hello, I guess you are new around here. You can start using the application after sign up." : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Привет, кажется, ты здесь новенький. Ты можешь начать пользоваться приложением после регистрации."
+          }
+        }
+      }
+    },
     "Hello, World!" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Привет, мир"
+          }
+        }
+      }
+    },
+    "Home" : {
+
+    },
+    "I am happy to see you again. You can continue where you left off by logging in" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Я рад видеть вас. Вы можете продолжить где вы остановились войдя в аккаунт"
           }
         }
       }
@@ -89,12 +279,32 @@
         }
       }
     },
+    "Password" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пароль"
+          }
+        }
+      }
+    },
     "Profile" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Профиль"
+          }
+        }
+      }
+    },
+    "Repeat Password" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Повторите пароль"
           }
         }
       }
@@ -110,12 +320,96 @@
         }
       }
     },
+    "Select some of your favorite topics to let us suggest better news for you." : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выберите несколько ваших любимых тем, чтобы мы могли предложить вам более подходящие новости."
+          }
+        }
+      }
+    },
+    "Select your favorite topics" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выберите ваши любимые темы"
+          }
+        }
+      }
+    },
+    "Sign In" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Войти"
+          }
+        }
+      }
+    },
+    "Sign Up" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зарегестрироваться"
+          }
+        }
+      }
+    },
+    "Thousands of articles in each category" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тысячи статей в каждой категории"
+          }
+        }
+      }
+    },
     "ToDay" : {
       "localizations" : {
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Сегодня"
+          }
+        }
+      }
+    },
+    "Username" : {
+
+    },
+    "Welcome Back 👋" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добро пожаловать 👋"
+          }
+        }
+      }
+    },
+    "Welcome to NewsToDay" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добро пожаловать в новости сегодня"
+          }
+        }
+      }
+    },
+    "You haven't saved any articles yet. Start reading and bookmarking them now" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы еще не сохраняли никаких статей. Начните читать и закладывайте их сейчас"
           }
         }
       }

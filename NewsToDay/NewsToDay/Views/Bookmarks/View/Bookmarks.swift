@@ -1,20 +1,26 @@
-import SwiftUI
+//
+//  BookmarkItem.swift
+//  NewsToDay
+//
+//  Created by Ylyas Abdywahytow on 10/23/24.
+//
 
+import SwiftUI
 struct Bookmarks: View {
     // MARK: - Properties
     var selectedTab = 2
     @State var isActive: Bool = false
     @State var isSaved: Bool = false
     var mainImage: String = "city"
-    var boookMarktext: String = "Bookmarks"
-    var article: String = "Saved articles to the library"
+    var boookMarktext: LocalizedStringKey = "Bookmarks"
+    var article: LocalizedStringKey = "Saved articles to the library"
     var bullet: String = "UI/UX Design"
     var topic : String = "A Simple Trick For Creating Color Palettes Quickly"
     var topic2 : String = "Six steps to creating a color pallete"
     var topic3 : String = "Creating Color Palette from world around you"
     var bullet3: String = "Colors"
     var bullet2: String = "Art"
-    var notSaved: String = "You haven't saved any articles yet. Start reading and bookmarking them now"
+    var notSaved: LocalizedStringKey = "You haven't saved any articles yet. Start reading and bookmarking them now"
     
     // MARK: - Body
     var body: some View {

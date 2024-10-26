@@ -21,7 +21,7 @@ struct MainTabView: View {
                     }
                     .tag(0)
                 
-                Categories()
+                Categories()         
                     .tabItem {
                         Constants.Icons.categories
                     }

@@ -22,7 +22,7 @@ struct CategoriesFavoriteTopics: View {
                     .padding(.top, 32)
             }
             
-            ActionButtonView(buttonText: "Next", action: { isMainTabViewActive = true})
+            ActionButtonView(buttonText: "Next", action: { isMainTabViewActive = true}, action2: {})
                 .padding(.bottom, 16)
         }
         .fullScreenCover(isPresented: $isMainTabViewActive, content: {
