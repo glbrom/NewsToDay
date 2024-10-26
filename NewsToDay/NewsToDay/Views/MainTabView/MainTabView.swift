@@ -21,7 +21,7 @@ struct MainTabView: View {
                     }
                     .tag(0)
                 
-                Categories()         
+                Categories()
                     .tabItem {
                         Constants.Icons.categories
                     }
@@ -33,12 +33,13 @@ struct MainTabView: View {
                     }
                     .tag(2)
                 
-                Profile()
+                ProfileView()
                     .tabItem {
                         Constants.Icons.profile
                     }
                     .tag(3)
             }
+            .navigationViewStyle(StackNavigationViewStyle())
             .accentColor(Constants.Colors.purplePrimary)
             
             VStack {

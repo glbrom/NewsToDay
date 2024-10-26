@@ -15,22 +15,22 @@ struct ActionButtonView: View {
     var action2: () -> Void
     // MARK: - Body
     var body: some View {
-         Button(action: {
-             action()
-             action2()
-         }) {
-             Text(buttonText)
-                 .font(.interFont(.semiBold, size: 16))
-                 .frame(width: 336, height: 56)
-                 .background(Constants.Colors.purplePrimary)
-                 .cornerRadius(12)
-                 .padding(.horizontal, 20)
-                 .foregroundColor(.white)
-         }
-         .buttonStyle(PlainButtonStyle())
-     }
- }
+        Button(action: {
+            action()
+            action2()
+        }) {
+            Text(buttonText)
+                .font(.interFont(.semiBold, size: 16))
+                .frame(width: 336, height: 56)
+                .background(Constants.Colors.purplePrimary)
+                .cornerRadius(12)
+                .padding(.horizontal, 20)
+                .foregroundColor(.white)
+        }
+        .buttonStyle(PlainButtonStyle())
+    }
+}
 
- #Preview {
-     ActionButtonView(buttonText: "Next", action: {}, action2: {})
- }
+#Preview {
+    ActionButtonView(buttonText: "Next", action: {}, action2: {})
+}
