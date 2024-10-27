@@ -44,7 +44,7 @@ struct OnBoarding: View {
                 } action2: {}
                     .padding(.bottom, 16)
                     .fullScreenCover(isPresented: $isMainTabViewActive, content: {
-                        MainTabView()
+                        LoginPageView(viewModel: RegisterViewModel())
                     })
             }
         }

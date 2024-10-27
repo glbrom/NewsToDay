@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HeaderView: View {
+    @ObservedObject var viewModel: RegisterViewModel
     // MARK: - Body
     var body: some View {
         HStack {
@@ -18,14 +19,14 @@ struct HeaderView: View {
                 .clipShape(Circle())
             
             VStack {
-                Text("Dev P")
+                Text(viewModel.username)
                     .foregroundStyle(.blackPrimary)
                     .font(.interFont(.semiBold, size: 16))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 12)
                     .padding(.horizontal, 24)
                 
-                Text("devgmail.com")
+                Text(viewModel.email)
                     .foregroundStyle(.greyLight)
                     .font(.interFont(.regular, size: 14))
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -38,5 +39,5 @@ struct HeaderView: View {
 }
 
 #Preview {
-    HeaderView()
+    HeaderView(viewModel: RegisterViewModel())
 }

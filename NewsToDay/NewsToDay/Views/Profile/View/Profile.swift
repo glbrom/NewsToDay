@@ -12,6 +12,7 @@ struct ProfileView: View {
     @State private var showOnBoarding = false
     @State private var showLanguageView = false
     @State private var showTermsConditionsView = false
+    @ObservedObject var viewModel: RegisterViewModel
     
     // MARK: - Body
     var body: some View {
@@ -21,7 +22,7 @@ struct ProfileView: View {
                 .padding(.top, 28)
             
             // ImageProfile email
-            HeaderView()
+            HeaderView(viewModel:  RegisterViewModel())
                 .padding(.top, 16)
             
             // Button - Language
@@ -48,7 +49,7 @@ struct ProfileView: View {
             
             // Button - Sign Out
             Button(action: {
-                showOnBoarding.toggle()
+                viewModel.signOut()
             }) {
                 buttonView(title: "Sign Out", icon: Constants.Icons.signOut)
             }
@@ -90,5 +91,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView()
+    ProfileView(viewModel: RegisterViewModel())
 }

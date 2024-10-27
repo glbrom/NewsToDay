@@ -9,25 +9,17 @@ import SwiftUI
 import FirebaseAuth
 struct LoginPageView: View {
     // MARK: - Properties
-    
-    @State var email: String = ""
-    @State var password: String = ""
-    @State private var alertMessage  = ""
-    @State private var showAlert = false
-    @State private var navigateToMainTab = false
-    @State private var navigateToSignUp = false
-    
+    @ObservedObject var viewModel: RegisterViewModel
     
     
     var title: LocalizedStringKey = "Welcome Back 👋"
-var subtitle: LocalizedStringKey = "I am happy to see you again. You can continue where you left off by logging in"
+    var subtitle: LocalizedStringKey = "I am happy to see you again. You can continue where you left off by logging in"
     var promptEmail: LocalizedStringKey =  "Email Adress"
     var promptPassword: LocalizedStringKey = "Password"
     var buttonText: LocalizedStringKey = "Sign In"
     var noAccount: LocalizedStringKey = "Don’t have an account?"
     var registerText: LocalizedStringKey = "Sign Up"
     var error: String = "Error"
-    var emailAlert: String = "Please enter your email and password."
     var ok: String = "OK"
     var body: some View {
         // MARK: - Body
@@ -49,22 +41,20 @@ var subtitle: LocalizedStringKey = "I am happy to see you again. You can continu
                    
                    VStack(spacing: 16) {
                        CustomTextField(
-                           icon: Constants.Icons.envelope,
-                           placeholder: promptEmail,
-                           text: $email
+                        text: $viewModel.email, icon: Constants.Icons.envelope,
+                        placeholder: promptEmail
                        )
                        
                        CustomTextField(
-                           icon: Constants.Icons.padlock,
-                           placeholder: promptPassword,
-                           text: $password,
+                        text: $viewModel.password, icon: Constants.Icons.padlock,
+                        placeholder: promptPassword,
                            isSecure: true
                        )
                    }
                    .padding(.horizontal, 20)
                    .padding(.top, 32)
                    
-                   ActionButtonView(buttonText: buttonText, action: {}, action2: LogIn)
+                   ActionButtonView(buttonText: buttonText, action: {}, action2: viewModel.LogIn)
                        .padding(.top, 64)
                    
                    Spacer()
@@ -72,49 +62,33 @@ var subtitle: LocalizedStringKey = "I am happy to see you again. You can continu
                    HStack {
                        Text(noAccount)
                            .foregroundColor(.blackLighter)
-                       Button(action: {navigateToSignUp = true}) {
+                       Button(action: {viewModel.navigateToSignUp = true}) {
                            Text(registerText)
                                .foregroundColor(.blackPrimary)
                        }
                    }
                    .padding(.bottom, 8)
                }
-               .alert(isPresented: $showAlert) {
-                   Alert(title: Text(error), message: Text(alertMessage), dismissButton: .default(Text(ok)))
+               .alert(isPresented: $viewModel.showAlert) {
+                   Alert(title: Text(error), message: Text(viewModel.alertMessage), dismissButton: .default(Text(ok)))
                }
                .background(
-                   NavigationLink(destination: MainTabView(), isActive: $navigateToMainTab) {
+                NavigationLink(destination: MainTabView(), isActive: $viewModel.navigateToMainTab) {
                        EmptyView()
                    }
                    .hidden()
                )
                .background(
-                             NavigationLink(destination: SignUp(), isActive: $navigateToSignUp) {
+                NavigationLink(destination: SignUp(viewModel: RegisterViewModel()), isActive: $viewModel.navigateToSignUp) {
                                  EmptyView()
                              }
                              .hidden()
                          )
            }
+           .navigationBarBackButtonHidden(true)
        }
-    
-    private func LogIn() {
-        if email.isEmpty || password.isEmpty {
-            alertMessage = emailAlert
-               showAlert = true
-               return
-           }
-        
-        Auth.auth().signIn(withEmail: email, password: password){ result, error in
-            if let error = error {
-                alertMessage = error.localizedDescription
-                showAlert = true
-            } else {
-                navigateToMainTab = true
-            }
-        }
-    }
    }
 
    #Preview {
-       LoginPageView()
+       LoginPageView(viewModel: RegisterViewModel())
    }

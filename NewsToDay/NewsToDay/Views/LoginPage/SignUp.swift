@@ -10,15 +10,7 @@ import FirebaseAuth
 
 struct SignUp: View {
     // MARK: - Properties
-    @State private var email: String = ""
-    @State private var username: String = ""
-    @State private var password: String = ""
-    @State private var confirmPassword: String = ""
-    @State private var passwordMatchError: String? = nil
-    @State private var showAlert = false
-    @State private var alertMessage = ""
-    @State private var navigateToMainTab = false
-    @State private var navigateToLogin = false
+    @ObservedObject var viewModel: RegisterViewModel
     
     var usernameText: LocalizedStringKey = "Username"
     var promptEmail: LocalizedStringKey = "Email Address"
@@ -54,12 +46,12 @@ struct SignUp: View {
                 .padding(.leading, 20)
                 
                 VStack(spacing: 16) {
-                    CustomTextField(icon: Constants.Icons.profile, placeholder: usernameText, text: $username)
-                    CustomTextField(icon: Constants.Icons.envelope, placeholder: promptEmail, text: $email)
-                    CustomTextField(icon: Constants.Icons.padlock, placeholder: promptPassword, text: $password, isSecure: true)
-                    CustomTextField(icon: Constants.Icons.padlock, placeholder: promptConfirm, text: $confirmPassword, isSecure: true)
+                    CustomTextField(text: $viewModel.username, icon: Constants.Icons.profile, placeholder: usernameText)
+                    CustomTextField(text: $viewModel.email, icon: Constants.Icons.envelope, placeholder: promptEmail)
+                    CustomTextField(text: $viewModel.password, icon: Constants.Icons.padlock, placeholder: promptPassword, isSecure: true)
+                    CustomTextField(text: $viewModel.confirmPassword, icon: Constants.Icons.padlock, placeholder: promptConfirm, isSecure: true)
                     
-                    if let error = passwordMatchError {
+                    if let error = viewModel.passwordMatchError {
                         Text(error)
                             .foregroundColor(.red)
                             .font(.interFont(.regular, size: 14))
@@ -69,7 +61,7 @@ struct SignUp: View {
                 .padding(.horizontal, 20)
                 .padding(.top, 32)
                 
-                ActionButtonView(buttonText: buttonText, action: checkPasswordMatch, action2: register)
+                ActionButtonView(buttonText: buttonText, action: checkPasswordMatch, action2: viewModel.register)
                     .padding(.top, 16)
                 
                 Spacer()
@@ -77,57 +69,43 @@ struct SignUp: View {
                 HStack {
                     Text(haveAccount)
                         .foregroundColor(.blackLighter)
-                    Button(action: { navigateToLogin = true}) {
+                    Button(action: { viewModel.navigateToLogin = true}) {
                         Text(signIn)
                             .foregroundColor(.blackPrimary)
                     }
                 }
                 .padding(.bottom, 8)
             }
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text(error), message: Text(alertMessage), dismissButton: .default(Text(ok)))
+            .alert(isPresented: $viewModel.showAlert) {
+                Alert(title: Text(error), message: Text( viewModel.alertMessage), dismissButton: .default(Text(ok)))
             }
             .background(
-                NavigationLink(destination: MainTabView(), isActive: $navigateToMainTab) {
+                NavigationLink(destination: MainTabView(), isActive: $viewModel.navigateToMainTab) {
                     EmptyView()
                 }
                 .hidden()
             )
             .background(
-                          NavigationLink(destination: LoginPageView(), isActive: $navigateToLogin) {
+                NavigationLink(destination: LoginPageView(viewModel: RegisterViewModel()), isActive: $viewModel.navigateToLogin) {
                               EmptyView()
                           }
                           .hidden()
                       )
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     // MARK: - Functions
-    
     private func checkPasswordMatch() {
-        if password == confirmPassword {
-            passwordMatchError = nil
+        if viewModel.password == viewModel.confirmPassword {
+            viewModel.passwordMatchError = nil
         } else {
-            passwordMatchError = matchError
+            viewModel.passwordMatchError = matchError
         }
     }
     
-    private func register() {
-        guard passwordMatchError == nil else {
-            return
-        }
-        
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            if let error = error {
-                alertMessage = error.localizedDescription
-                showAlert = true
-            } else {
-                navigateToMainTab = true
-            }
-        }
-    }
 }
 
 #Preview {
-    SignUp()
+    SignUp(viewModel: RegisterViewModel())
 }
