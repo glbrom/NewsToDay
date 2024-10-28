@@ -50,6 +50,13 @@
             ReferencedContainer = "container:NewsToDay.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "KEY_ONE"
+            value = "63d415cde5ad4051ae34e09b85a9f4c7"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

@@ -7,14 +7,47 @@
 
 import Foundation
 
-final class NetworkManager {
+// MARK: - NewsApi Service
+enum NetworkManager {
+    case search(String)
+    case byCategory(Category)
+}
+
+extension NetworkManager: HTTPClient {
+    var apiKey: ApiKeys {
+        return .one
+    }
     
-    // MARK: - Properties
-    static let shared = NetworkManager()
+    var baseURL: String {
+        return "https://newsapi.org/v2/"
+    }
     
-    // MARK: - Initializer
-    private init() {}
+    var path: String {
+        switch self {
+        case .search:
+            return "everything?q="
+        case .byCategory:
+            return "top-headlines/sources?category="
+        }
+    }
     
-    // MARK: - Methods
+    var endpoint: String {
+        switch self {
+        case let .search(query):
+            return query
+        case let .byCategory(category):
+            return category.rawValue
+        }
+    }
     
+    var method: HTTPMethod {
+        return .GET
+    }
+    
+    var headers: [String : String]? {
+        [
+            "Content-type": "application/json",
+            "x-api-key": apiKey.rawValue
+        ]
+    }
 }
