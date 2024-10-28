@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct ProfileView: View {
     // MARK: - Properties
@@ -13,6 +14,7 @@ struct ProfileView: View {
     @State private var showLanguageView = false
     @State private var showTermsConditionsView = false
     @ObservedObject var viewModel: RegisterViewModel
+    @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
     
     // MARK: - Body
     var body: some View {
@@ -22,7 +24,7 @@ struct ProfileView: View {
                 .padding(.top, 28)
             
             // ImageProfile email
-            HeaderView(viewModel:  RegisterViewModel())
+            HeaderView(viewModel:  viewModel)
                 .padding(.top, 16)
             
             // Button - Language
@@ -63,9 +65,9 @@ struct ProfileView: View {
         .fullScreenCover(isPresented: $showTermsConditionsView) {
             TermsConditionsView()
         }
-        .fullScreenCover(isPresented: $showOnBoarding) {
-            OnBoarding()
-        }
+//        .fullScreenCover(isPresented: $showOnBoarding) {
+//            OnBoarding()
+//        }
     }
     
     // MARK: - Methods

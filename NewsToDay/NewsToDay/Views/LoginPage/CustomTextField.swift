@@ -28,10 +28,12 @@ struct CustomTextField: View {
             if isSecure {
                 if isPasswordVisible {
                     TextField(placeholder, text: $text)
+                        .autocapitalization(.none)
                         .foregroundColor(.greyPrimary)
                         .font(.interFont(.medium, size: 16))
                 } else {
                     SecureField(placeholder, text: $text)
+                        .autocapitalization(.none)
                         .foregroundColor(.greyPrimary)
                         .font(.interFont(.medium, size: 16))
                 }
@@ -46,6 +48,7 @@ struct CustomTextField: View {
                 }
             } else {
                 TextField(placeholder, text: $text)
+                    .autocapitalization(.none) 
                     .foregroundColor(.greyPrimary)
                     .font(.interFont(.medium, size: 16))
             }

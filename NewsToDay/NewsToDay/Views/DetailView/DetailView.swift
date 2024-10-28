@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
+    @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
     var body: some View {
         Text("DetailView")
     }

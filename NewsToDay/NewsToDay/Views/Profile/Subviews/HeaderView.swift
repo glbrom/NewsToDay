@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HeaderView: View {
     @ObservedObject var viewModel: RegisterViewModel
+    @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
     // MARK: - Body
     var body: some View {
         HStack {

@@ -11,6 +11,7 @@ struct LoginPageView: View {
     // MARK: - Properties
     @ObservedObject var viewModel: RegisterViewModel
     
+    @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
     
     var title: LocalizedStringKey = "Welcome Back 👋"
     var subtitle: LocalizedStringKey = "I am happy to see you again. You can continue where you left off by logging in"

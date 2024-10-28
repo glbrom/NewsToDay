@@ -11,6 +11,7 @@ import FirebaseAuth
 struct SignUp: View {
     // MARK: - Properties
     @ObservedObject var viewModel: RegisterViewModel
+    @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
     
     var usernameText: LocalizedStringKey = "Username"
     var promptEmail: LocalizedStringKey = "Email Address"
@@ -47,9 +48,13 @@ struct SignUp: View {
                 
                 VStack(spacing: 16) {
                     CustomTextField(text: $viewModel.username, icon: Constants.Icons.profile, placeholder: usernameText)
+                        .autocapitalization(.none)
                     CustomTextField(text: $viewModel.email, icon: Constants.Icons.envelope, placeholder: promptEmail)
+                        .autocapitalization(.none)
                     CustomTextField(text: $viewModel.password, icon: Constants.Icons.padlock, placeholder: promptPassword, isSecure: true)
+                        .autocapitalization(.none)
                     CustomTextField(text: $viewModel.confirmPassword, icon: Constants.Icons.padlock, placeholder: promptConfirm, isSecure: true)
+                        .autocapitalization(.none)
                     
                     if let error = viewModel.passwordMatchError {
                         Text(error)

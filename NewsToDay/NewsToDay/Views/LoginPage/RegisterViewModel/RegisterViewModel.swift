@@ -26,6 +26,7 @@ class RegisterViewModel: ObservableObject {
     @Published var confirmPassword: String = ""
     @Published var passwordMatchError: String? = nil
     @Published var emailAlert: String = "Please enter your email and password."
+    @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
       private var tempUserSession: User?
     init() {
            self.userSession = Auth.auth().currentUser
@@ -84,15 +85,19 @@ class RegisterViewModel: ObservableObject {
        }
        
        // MARK: - Sign Out
-       func signOut() {
-           do {
-               try Auth.auth().signOut()
-               userSession = nil
-               didAuthenticateUser = false
-           } catch {
-               print("DEBUG: Sign out failed with error: \(error.localizedDescription)")
-           }
-       }
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+            userSession = nil
+            didAuthenticateUser = false
+            email = ""
+            username = ""
+        } catch {
+            print("DEBUG: Sign out failed with error: \(error.localizedDescription)")
+            alertMessage = "Sign out failed. Please try again."
+            showAlert = true 
+        }
+    }
        
        // MARK: - Fetch Email for Current Session
        private func fetchEmail() {

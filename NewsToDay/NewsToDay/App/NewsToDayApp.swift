@@ -11,7 +11,6 @@ import Firebase
 @main
 struct NewsToDayApp: App {
     @StateObject private var viewModel = RegisterViewModel()
-    @StateObject private var localization = LocalizationManager()
     init(){
         FirebaseApp.configure()
     }
@@ -19,7 +18,6 @@ struct NewsToDayApp: App {
         WindowGroup {
             OnBoarding()
                 .environmentObject(viewModel)
-                .environmentObject(localization)
         }
     }
 }

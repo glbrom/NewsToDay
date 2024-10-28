@@ -10,7 +10,7 @@ import SwiftUI
 struct MainTabView: View {
     // MARK: - Properties
     @State private var selectedTab = 0
-    
+    @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
     // MARK: - Body
     var body: some View {
         NavigationView{

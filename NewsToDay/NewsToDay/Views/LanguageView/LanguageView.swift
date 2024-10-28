@@ -36,6 +36,7 @@ struct LanguageView: View {
             VStack {
                 Button(action: {
                     localizationManager.language = .en
+                    localizationManager.saveLanguage(.en)
                     selectedLanguage = "English"
                 }) {
                     buttonStyle(language: "English", isSelected: selectedLanguage == "English")
@@ -43,6 +44,7 @@ struct LanguageView: View {
                 
                 Button(action: {
                     localizationManager.language = .ru
+                    localizationManager.saveLanguage(.ru)
                     selectedLanguage = "Russian"
                 }) {
                     buttonStyle(language: "Russian", isSelected: selectedLanguage == "Russian")
