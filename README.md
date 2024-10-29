@@ -19,9 +19,8 @@
 - MVVM
 - Min version iOS 15.0
 
-Welcome to the NewsToDay project! This is a simple news feed implementation, is intended for both educational purposes and for gaining experience in working in a team. Below is a detailed README.md file that outlines the project, its features, installation instructions, usage, and an overview of the code.
-
 ## Introduction
+Welcome to the NewsToDay project! This is a simple news feed implementation, is intended for both educational purposes and for gaining experience in working in a team. Below is a detailed README.md file that outlines the project, its features, installation instructions, usage, and an overview of the code.
 
 ## Features
 
