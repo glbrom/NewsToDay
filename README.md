@@ -16,7 +16,6 @@
 - Swift 5
 - SwiftUI
 - AppStorage
-- AVFoundation
 - MVVM
 - Min version iOS 15.0
 
@@ -44,7 +43,7 @@ Welcome to the NewsToDay project! This is a simple news feed implementation, is 
 
 ## Installation
 
-To get started with the Tic Tac Toe project, follow these steps:
+To get started with the NewsToDay project, follow these steps:
 
 1. **Clone the repository:**
    ```bash
