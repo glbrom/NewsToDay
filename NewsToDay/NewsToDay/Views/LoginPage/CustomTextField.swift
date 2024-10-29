@@ -9,11 +9,12 @@ import SwiftUI
 
 struct CustomTextField: View {
     // MARK: - Properties
+    @Binding var text: String
+    @State private var isPasswordVisible: Bool = false
+    
     var icon: Image
     var placeholder: LocalizedStringKey
-    @Binding var text: String
     var isSecure: Bool = false
-    @State private var isPasswordVisible: Bool = false
     var promptEmail: LocalizedStringKey =  "Email Adress"
     // MARK: - Body
     var body: some View {
@@ -22,14 +23,17 @@ struct CustomTextField: View {
                 .resizable()
                 .frame(width: 24, height: 24)
                 .foregroundColor(.greyPrimary)
+                .padding(.trailing,24)
             
             if isSecure {
                 if isPasswordVisible {
                     TextField(placeholder, text: $text)
+                        .autocapitalization(.none)
                         .foregroundColor(.greyPrimary)
                         .font(.interFont(.medium, size: 16))
                 } else {
                     SecureField(placeholder, text: $text)
+                        .autocapitalization(.none)
                         .foregroundColor(.greyPrimary)
                         .font(.interFont(.medium, size: 16))
                 }
@@ -44,6 +48,7 @@ struct CustomTextField: View {
                 }
             } else {
                 TextField(placeholder, text: $text)
+                    .autocapitalization(.none) 
                     .foregroundColor(.greyPrimary)
                     .font(.interFont(.medium, size: 16))
             }

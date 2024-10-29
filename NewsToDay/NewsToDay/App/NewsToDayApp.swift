@@ -10,12 +10,14 @@ import Firebase
 
 @main
 struct NewsToDayApp: App {
+    @StateObject private var viewModel = RegisterViewModel()
     init(){
         FirebaseApp.configure()
     }
     var body: some Scene {
         WindowGroup {
             OnBoarding()
+                .environmentObject(viewModel)
         }
     }
 }

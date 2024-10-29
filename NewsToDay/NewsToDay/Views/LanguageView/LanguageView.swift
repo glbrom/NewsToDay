@@ -12,6 +12,7 @@ struct LanguageView: View {
     @Environment(\.presentationMode) var presentationMode
     @AppStorage("selectedLanguage") private var selectedLanguage: String?
     
+       @ObservedObject private var localizationManager = LocalizationManager.shared
     // MARK: - Body
     var body: some View {
         VStack {
@@ -34,12 +35,16 @@ struct LanguageView: View {
             
             VStack {
                 Button(action: {
+                    localizationManager.language = .en
+                    localizationManager.saveLanguage(.en)
                     selectedLanguage = "English"
                 }) {
                     buttonStyle(language: "English", isSelected: selectedLanguage == "English")
                 }
                 
                 Button(action: {
+                    localizationManager.language = .ru
+                    localizationManager.saveLanguage(.ru)
                     selectedLanguage = "Russian"
                 }) {
                     buttonStyle(language: "Russian", isSelected: selectedLanguage == "Russian")
