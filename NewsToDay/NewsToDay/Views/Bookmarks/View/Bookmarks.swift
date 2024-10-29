@@ -11,6 +11,7 @@ struct Bookmarks: View {
     var selectedTab = 2
     @State var isActive: Bool = false
     @State var isSaved: Bool = false
+    @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
     var mainImage: String = "city"
     var boookMarktext: LocalizedStringKey = "Bookmarks"
     var article: LocalizedStringKey = "Saved articles to the library"

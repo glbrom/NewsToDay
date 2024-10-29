@@ -122,7 +122,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "😷 Ковид-19"
+            "value" : "😷 Covid-19"
           }
         }
       }
@@ -177,12 +177,6 @@
           }
         }
       }
-    },
-    "Dev P" : {
-
-    },
-    "devgmail.com" : {
-
     },
     "Don’t have an account?" : {
       "localizations" : {
@@ -266,7 +260,14 @@
       }
     },
     "Language" : {
-
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Язык"
+          }
+        }
+      }
     },
     "News" : {
       "localizations" : {

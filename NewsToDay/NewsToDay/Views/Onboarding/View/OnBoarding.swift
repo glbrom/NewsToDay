@@ -12,6 +12,7 @@ struct OnBoarding: View {
     @State private var currentStep = 1
     @State private var isMainTabViewActive = false
     @State private var dragOffset: CGFloat = 0
+    @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
     
     private let itemWidth: CGFloat = 288
     private let peekAmount: CGFloat = 20
@@ -44,7 +45,7 @@ struct OnBoarding: View {
                 } action2: {}
                     .padding(.bottom, 16)
                     .fullScreenCover(isPresented: $isMainTabViewActive, content: {
-                        MainTabView()
+                        LoginPageView(viewModel: RegisterViewModel())
                     })
             }
         }

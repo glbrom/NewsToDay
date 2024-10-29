@@ -11,7 +11,8 @@ import Combine
 @MainActor
 struct HomePage: View {
     @StateObject private var viewModel = HomePageViewModel()
-    
+    @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
+
     var body: some View {
         VStack {
             TextField("Search", text: $viewModel.searchQuery)
