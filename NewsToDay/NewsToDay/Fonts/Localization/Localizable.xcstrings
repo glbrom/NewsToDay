@@ -249,9 +249,6 @@
         }
       }
     },
-    "Home" : {
-
-    },
     "I am happy to see you again. You can continue where you left off by logging in" : {
       "localizations" : {
         "ru" : {
@@ -333,6 +330,9 @@
           }
         }
       }
+    },
+    "Search" : {
+
     },
     "Select some of your favorite topics to let us suggest better news for you." : {
       "localizations" : {
