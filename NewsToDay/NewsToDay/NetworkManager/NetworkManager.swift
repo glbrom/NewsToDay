@@ -27,7 +27,7 @@ extension NetworkManager: HTTPClient {
         case .search:
             return "everything?q="
         case .byCategory:
-            return "top-headlines/sources?category="
+            return "top-headlines?category="
         }
     }
     

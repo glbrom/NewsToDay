@@ -147,6 +147,9 @@
         }
       }
     },
+    "Author" : {
+
+    },
     "Bookmarks" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -157,6 +160,9 @@
           }
         }
       }
+    },
+    "Browse" : {
+
     },
     "Categories" : {
       "localizations" : {
@@ -169,6 +175,7 @@
       }
     },
     "DetailView" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ru" : {
           "stringUnit" : {
@@ -177,6 +184,9 @@
           }
         }
       }
+    },
+    "Discower things of this world" : {
+
     },
     "Don’t have an account?" : {
       "localizations" : {
@@ -310,6 +320,9 @@
         }
       }
     },
+    "Recomended for you" : {
+
+    },
     "Repeat Password" : {
       "localizations" : {
         "ru" : {
@@ -319,6 +332,9 @@
           }
         }
       }
+    },
+    "Results" : {
+
     },
     "Saved articles to the library" : {
       "extractionState" : "manual",
@@ -332,6 +348,9 @@
       }
     },
     "Search" : {
+
+    },
+    "See all" : {
 
     },
     "Select some of your favorite topics to let us suggest better news for you." : {
@@ -430,6 +449,9 @@
           }
         }
       }
+    },
+    "По вашему запросу нет результатов" : {
+
     }
   },
   "version" : "1.0"
