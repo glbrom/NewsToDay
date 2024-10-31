@@ -16,7 +16,7 @@ struct MainTabView: View {
         NavigationView{
             ZStack {
                 TabView(selection: $selectedTab) {
-                    HomePage()
+                    HomeView()
                         .tabItem {
                             Constants.Icons.home
                         }
