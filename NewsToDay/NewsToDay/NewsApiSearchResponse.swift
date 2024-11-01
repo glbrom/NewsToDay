@@ -22,6 +22,7 @@ struct SearchArticle: Codable, Hashable, Equatable {
     let urlToImage: String?
     let publishedAt: String?
     let content: String?
+    var category: String?
 }
 
 // MARK: - Identifiable

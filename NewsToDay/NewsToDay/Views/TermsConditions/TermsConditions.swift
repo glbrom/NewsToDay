@@ -48,7 +48,7 @@ These Terms are governed by and construed in accordance with the laws of the Rus
 11. Changes to the Terms
 We may update these Terms from time to time. Any changes will be posted on this page, and your continued use of the App after any changes indicates your acceptance of the updated Terms.
 12. Contact Us
-If you have any questions about these Terms or the App, please contact us at ilias.abdv@gmail.com.
+If you have any questions about these Terms or the App, please contact us at newstoday@support.com.
 
 """
     

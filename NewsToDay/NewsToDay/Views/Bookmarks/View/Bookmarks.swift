@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+
 struct Bookmarks: View {
     // MARK: - Properties
     var selectedTab = 2
     @State var isActive: Bool = false
-    @State var isSaved: Bool = false
+    @State var isSaved: Bool = true
     @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
     var mainImage: String = "city"
     var boookMarktext: LocalizedStringKey = "Bookmarks"
@@ -22,14 +23,19 @@ struct Bookmarks: View {
     var bullet3: String = "Colors"
     var bullet2: String = "Art"
     var notSaved: LocalizedStringKey = "You haven't saved any articles yet. Start reading and bookmarking them now"
+    @ObservedObject var viewModel = BookMarkViewModel()
     
     // MARK: - Body
+       
     var body: some View {
       
         VStack {
             
-            TitleWithDescription(title: boookMarktext, description: article)
+            TitleWithDescription(title: viewModel.boookMarkTitle, description: viewModel.articleDescription)
                 .padding(.top, 28)
+            if viewModel.articles.isEmpty {
+                
+            }
             
             VStack {
                 if !isSaved {
@@ -55,19 +61,23 @@ struct Bookmarks: View {
                 } else {
                     ScrollView {
                         VStack {
-                            BookmarkItem(image: mainImage, category: bullet, title: topic)
-                            BookmarkItem(image: mainImage, category: bullet2, title: topic2)
-                            BookmarkItem(image: mainImage, category: bullet3, title: topic3)
-                            BookmarkItem(image: mainImage, category: bullet, title: topic)
+                            ForEach(viewModel.articles) { article in
+                                BookmarkItem(article: article)
+                            }
                         }
+                        
                     }
                 }
+                
+                
+                Spacer()
             }
             .padding(.top, 32)
-            
             Spacer()
         }
-        .padding(.horizontal, 20)
+                .onAppear {
+                            viewModel.fetchBookmarks()
+        }
     }
 }
 

@@ -9,11 +9,28 @@ import SwiftUI
 
 struct DetailView: View {
     @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
-
+    var  storageManager = StorageManager.shared
+   @State  var isBookmarked: Bool = false
     var article: SearchArticle
     var category: Category
     
     var body: some View {
+// MARK: - Button for saving
+//        Button(action:{
+//            isBookmarked = true
+//            if isBookmarked {
+//                Task {
+//                    try await storageManager.saveArticle(article, category: category)
+//                }
+//            }
+//        })
+//        {
+//            Constants.Icons.bookmarkWhite
+//                .resizable()
+//                .frame(width: 42, height:  42)
+//                .background(Color.green)
+//            
+//        }
         VStack {
             ZStack {
                 if let url = URL(string: article.urlToImage ?? "") {
