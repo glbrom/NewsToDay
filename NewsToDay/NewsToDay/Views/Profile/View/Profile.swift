@@ -47,7 +47,7 @@ struct ProfileView: View {
             }) {
                 buttonView(title: "Terms & Conditions", icon: Constants.Icons.rightArrow)
             }
-            .padding(.bottom, 28)
+            .padding(.bottom, 18)
             
             // Button - Sign Out
             Button(action: {
@@ -58,7 +58,7 @@ struct ProfileView: View {
             }) {
                 buttonView(title: "Sign Out", icon: Constants.Icons.signOut)
             }
-            .padding(.bottom, 90)
+            .padding(.bottom, 40)
         }
         .padding(.horizontal, 20)
         
