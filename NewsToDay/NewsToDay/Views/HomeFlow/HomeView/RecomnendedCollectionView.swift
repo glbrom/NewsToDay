@@ -11,7 +11,7 @@ struct RecomnendedCollectionView: View {
     var recomendedNews: [SearchArticle]
     var category: Category
     var onDetail: ((SearchArticle) -> Void)?
-
+    
     var body: some View {
         VStack {
             ForEach(recomendedNews) { article in

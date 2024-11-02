@@ -65,6 +65,8 @@ enum Constants {
         static let checkMark = Image("Checkmark")
         static let envelope = Image("envelope")
         static let padlock = Image("padlock")
+        static let eye = Image("eye")
+        static let eyeSelect = Image("eye")
     }
     
     enum Backgrounds {

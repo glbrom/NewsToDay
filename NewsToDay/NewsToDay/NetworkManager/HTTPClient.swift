@@ -13,7 +13,16 @@ enum ApiKeys: String, CaseIterable {
     var rawValue: String {
         switch self {
         case .one:
-            return ProcessInfo.processInfo.environment["KEY_ONE"] ?? ""
+            
+            return "6b6b13b7f72b4259af2d388984744dfb"
+//            return ProcessInfo.processInfo.environment["KEY_ONE"] ?? ""
+            /* API KEYs
+             413449df930c41fd97c254c0dbbb1f93
+             7668237a7c744fdabdbef69c47548540
+             
+             
+             
+             */
         }
     }
 }

@@ -13,16 +13,19 @@ struct RecomendedHeader: View {
     var body: some View {
         HStack {
             Text("Recomended for you")
-                .bold()
+                .font(.interFont(.semiBold, size: 20))
+                .foregroundColor(.blackPrimary)
+            
             Spacer()
+            
             Button {
                 onSeeAll?()
             } label: {
                 Text("See all")
-                    .foregroundStyle(.greyLight)
+                    .font(.interFont(.medium, size: 14))
+                    .foregroundStyle(.greyPrimary)
             }
         }
-        .padding()
     }
 }
 

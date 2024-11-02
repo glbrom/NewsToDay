@@ -52,6 +52,9 @@ struct ProfileView: View {
             // Button - Sign Out
             Button(action: {
                 viewModel.signOut()
+                withAnimation {
+                    showOnBoarding.toggle()
+                }
             }) {
                 buttonView(title: "Sign Out", icon: Constants.Icons.signOut)
             }
@@ -59,15 +62,25 @@ struct ProfileView: View {
         }
         .padding(.horizontal, 20)
         
-        .fullScreenCover(isPresented: $showLanguageView) {
-            LanguageView()
+        .background(
+            Group {
+                NavigationLink(
+                    destination: LanguageView(),
+                    isActive: $showLanguageView,
+                    label: { EmptyView() }
+                )
+                
+                NavigationLink(
+                    destination: TermsConditionsView(),
+                    isActive: $showTermsConditionsView,
+                    label: { EmptyView() }
+                )
+            }
+        )
+        
+        .fullScreenCover(isPresented: $showOnBoarding) {
+            OnBoarding()
         }
-        .fullScreenCover(isPresented: $showTermsConditionsView) {
-            TermsConditionsView()
-        }
-//        .fullScreenCover(isPresented: $showOnBoarding) {
-//            OnBoarding()
-//        }
     }
     
     // MARK: - Methods
