@@ -9,25 +9,49 @@ import SwiftUI
 
 struct BookmarkItem: View {
     // MARK: - Properties
-    var image: String
-    var category: String
-    var title: String
+    var article: SearchArticle
     
     // MARK: - Body
     var body: some View {
         HStack(spacing: 16) {
-            Image(image)
-                .resizable()
-                .frame(width: 96, height: 96)
-                .cornerRadius(12)
+            if let imageUrl = article.urlToImage, let url = URL(string: imageUrl) {
+                AsyncImage(url: url) { phase in
+                    switch phase {
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 96, height: 96)
+                            .cornerRadius(12)
+                            .clipped()
+                    case .failure(_):
+                        Color.clear
+                            .frame(width: 96, height: 96)
+                            .cornerRadius(12)
+                    case .empty:
+                        Color.clear
+                            .frame(width: 96, height: 96)
+                            .cornerRadius(12)
+                    @unknown default:
+                        Color.clear
+                            .frame(width: 96, height: 96)
+                            .cornerRadius(12)
+                    }
+                }
+            } else {
+                Color.clear
+                    .frame(width: 96, height: 96)
+                    .cornerRadius(12)
+            }
             
             VStack(alignment: .leading) {
-                Text(category)
+                Text(article.category ?? "")
                     .foregroundColor(.greyPrimary)
                     .font(.interFont(.regular, size: 14))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.bottom, 8)
-                Text(title)
+                
+                Text(article.title ?? "NO title")
                     .foregroundColor(.blackPrimary)
                     .font(.interFont(.semiBold, size: 16))
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -37,5 +61,14 @@ struct BookmarkItem: View {
 }
 
 #Preview {
-    BookmarkItem(image: "city", category: "Category", title: "Title")
+    BookmarkItem(article: SearchArticle(
+        author: "Author",
+        title: "Sample Title",
+        description: "Description",
+        url: "https://example.com",
+        urlToImage: "https://example.com/image.jpg",
+        publishedAt: "2024-11-01",
+        content: "Sample content",
+        category: "Technology"
+    ))
 }

@@ -13,6 +13,7 @@ struct DetailView: View {
     
     @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
     @AppStorage("isBookmarked") private var isBookmarked: Bool = false
+    private let storageManager = StorageManager.shared
     
     var article: SearchArticle
     var category: Category
@@ -98,6 +99,26 @@ struct DetailView: View {
                     // BookmarksButton
                     Button {
                         isBookmarked.toggle()
+                //  BookMarkAction
+                        Task {
+                    if isBookmarked {
+                
+            do {
+                try await storageManager.saveArticle(article, category: category)
+            print("Article saved successfully.")
+            } catch {
+        print("Failed to save article: \(error)")
+            }
+            } else {
+        // Remove BookMark
+            do {
+            try await storageManager.removeArticle(article)
+            print("Article removed successfully.")
+            } catch {
+        print("Failed to remove article: \(error)")
+            }
+        }
+    }
                     } label: {
                         (isBookmarked ? Constants.Icons.bookmarkWhite : Constants.Icons.bookmarkWhite)
                             .renderingMode(.template)
