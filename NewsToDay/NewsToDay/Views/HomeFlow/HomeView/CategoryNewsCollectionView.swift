@@ -37,8 +37,9 @@ struct CategoryNewsCollectionView: View {
                                 Text(category.rawValue)
                                     .foregroundColor(.greyLighter)
                                     .font(.interFont(.regular, size: 12))
+                                    .frame(width: 120, alignment: .leading)
                                     .textCase(.uppercase)
-                                    .padding(EdgeInsets(top: 112, leading: 24, bottom: 0, trailing: 178))
+                                    .padding(EdgeInsets(top: 112, leading: 24, bottom: 0, trailing: 112))
                                 
                                 Text(article.title ?? "")
                                     .foregroundColor(.white)
