@@ -12,14 +12,14 @@ struct SearchNewsCollectionView: View {
     var searchNews: [SearchArticle]
     var category: Category
     var onDetail: ((SearchArticle) -> Void)?
-
+    
     var body: some View {
         ScrollView(.vertical) {
             VStack {
                 if searchNews.isEmpty {
                     Text("По вашему запросу нет результатов")
-                        .font(.headline)
-                        .foregroundStyle(.blackDark)
+                        .font(.interFont(.medium, size: 16))
+                        .foregroundStyle(.greyPrimary)
                         .padding()
                 }
                 ForEach(searchNews, id: \.self) { article in

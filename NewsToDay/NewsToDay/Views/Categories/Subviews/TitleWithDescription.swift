@@ -17,12 +17,12 @@ struct TitleWithDescription: View {
         VStack(alignment: .leading, spacing: 8) {
             Text(title)
                 .font(.interFont(.semiBold, size: 24))
-                .foregroundColor(.black)
+                .foregroundColor(.blackDark)
                 .frame(width: 336, alignment: .topLeading)
             
             Text(description)
                 .font(.interFont(.regular, size: 16))
-                .foregroundColor(.gray)
+                .foregroundColor(.greyPrimary)
                 .frame(width: 336, alignment: .topLeading)
         }
         .padding(.horizontal, 20)

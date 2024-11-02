@@ -13,11 +13,14 @@ struct SearchView: View {
     var body: some View {
         HStack(spacing: 24) {
             Image(.search)
+            
             TextField("Search", text: $searchQuery)
+                .font(.interFont(.medium, size: 16))
+                .foregroundColor(.greyPrimary)
         }
         .padding()
-        .background(Color(.systemGray6))
-        .cornerRadius(8)
+        .background(.greyLighter)
+        .cornerRadius(12)
     }
 }
 

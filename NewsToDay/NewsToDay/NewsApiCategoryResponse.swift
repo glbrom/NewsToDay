@@ -23,13 +23,13 @@ struct CategoryArticle: Identifiable, Codable, Hashable {
 }
 
 enum Category: String, Codable, CaseIterable, Identifiable {
-    case business = "business"
-    case entertainment = "entertainment"
-    case general = "general"
-    case health = "health"
-    case science = "science"
-    case sports = "sports"
-    case technology = "technology"
+    case business = "Business"
+    case entertainment = "Entertainment"
+    case general = "General"
+    case health = "Health"
+    case science = "Science"
+    case sports = "Sports"
+    case technology = "Technology"
 }
 
 extension Category {
