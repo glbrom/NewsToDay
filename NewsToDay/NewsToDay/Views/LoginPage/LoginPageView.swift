@@ -66,7 +66,7 @@ struct LoginPageView: View {
                    Alert(title: Text(error), message: Text(viewModel.alertMessage), dismissButton: .default(Text(ok)))
                }
                .background(
-                NavigationLink(destination: MainTabView(), isActive: $viewModel.navigateToMainTab) {
+                NavigationLink(destination: CategoriesFavoriteTopics(), isActive: $viewModel.navigateToMainTab) {
                        EmptyView()
                    }
                    .hidden()
