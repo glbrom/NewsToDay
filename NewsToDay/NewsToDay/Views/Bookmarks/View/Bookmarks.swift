@@ -11,7 +11,7 @@ struct Bookmarks: View {
     // MARK: - Properties
     var selectedTab = 2
     @State var isActive: Bool = false
-    @State var isSaved: Bool = true
+    @State var isSaved: Bool = false
     @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
     var mainImage: String = "city"
     var boookMarktext: LocalizedStringKey = "Bookmarks"
@@ -75,6 +75,7 @@ struct Bookmarks: View {
             .padding(.top, 32)
             Spacer()
         }
+        .padding(.horizontal,20)
                 .onAppear {
                             viewModel.fetchBookmarks()
         }

@@ -11,12 +11,13 @@ import FirebaseFirestore
 class BookMarkViewModel: ObservableObject {
     var db: Firestore { Firestore.firestore() }
       var storageManager = StorageManager.shared
-
+    @Published var isSaved: Bool = false
     @Published var isBookmarked: Bool = false
     @Published var articles: [SearchArticle] = []
     @Published  var boookMarkTitle: LocalizedStringKey = "Bookmarks"
     @Published  var articleDescription: LocalizedStringKey = "Saved articles to the library"
     @Published var noSavedMessage: LocalizedStringKey = "You haven't saved any articles yet. Start reading and bookmarking them now"
+    
 
       init() {
           fetchBookmarks()
