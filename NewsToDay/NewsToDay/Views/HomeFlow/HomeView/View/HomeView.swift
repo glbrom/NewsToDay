@@ -26,15 +26,14 @@ struct HomeView: View {
                 description: Layout.topDescription
             )
             .padding(.top, 28)
-            .padding(.bottom, 32)
             
             SearchView(
                 searchQuery: $viewModel.searchQuery
             )
-            .padding(.horizontal)
-            .padding(.bottom, 24)
+            .padding(.top, 32)
+            .padding(.horizontal, 20)
             
-            ScrollView(.vertical) {
+            ScrollView(.vertical, showsIndicators: false) {
                 // MARK: - Секция с выбором категории
                 if viewModel.searchQuery.isEmpty {
                     CategoryCollectionView(
@@ -42,29 +41,32 @@ struct HomeView: View {
                     ) { category in
                         viewModel.getByCategory(with: category)
                     }
-                    .padding(.horizontal)
+                    .padding(.top, 24)
                 }
                 
                 switch viewModel.state {
                 case .loading:
                     ProgressView()
-                        .scaleEffect(2)
+                        .scaleEffect(1.2)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .padding()
+                    
                 case .loaded:
                     /// Если триггерим поиск, включается другая коллекция
                     if viewModel.searchQuery.isEmpty {
                         /// Секция с новостями по категории
-                        CategoryNewsCollectionView(
-                            news: viewModel.news
-                        ) { article in
-                            //navigation to detail
+                        CategoryNewsCollectionView(news: viewModel.news, onDetail: { article in
+                            // navigation to detail
                             navigationArticle = article
                             navigateToDetail = true
-                        }
+                        }, category: viewModel.selectedCategory)
+                        .padding(.top, 24)
                         
                         RecomendedHeader {
                             //navigation to see all
                         }
+                        .padding(.top, 48)
+                        .padding(.trailing, 20)
                         
                         RecomnendedCollectionView(
                             recomendedNews: viewModel.recomendedNews,
@@ -74,6 +76,8 @@ struct HomeView: View {
                             navigationArticle = article
                             navigateToDetail = true
                         }
+                        .padding(.top, 16)
+//                        .padding(.trailing, 20)
                     } else {
                         /// Секция с новостями по поиску
                         SearchNewsCollectionView(
@@ -93,6 +97,9 @@ struct HomeView: View {
                         .padding()
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.leading, 20)
+            
             Spacer()
         }
         .background(

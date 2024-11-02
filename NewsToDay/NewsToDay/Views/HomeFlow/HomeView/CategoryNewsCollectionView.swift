@@ -8,32 +8,46 @@
 import SwiftUI
 
 struct CategoryNewsCollectionView: View {
+    
     var news: [SearchArticle]
     var onDetail: ((SearchArticle) -> Void)?
+    var category: Category
     
     var body: some View {
-        ScrollView(.horizontal) {
+        ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 16) {
                 ForEach(news) { article in
                     ZStack {
-                        if let url = URL(string: article.urlToImage ?? "") {
-                            AsyncImage(url: url) { img in
-                                img
-                                    .resizable()
-                                    .scaledToFill()
-                            } placeholder: {
-                                ZStack {
-                                    ProgressView()
-                                    Color.purpleLight
-                                }
-                            }
+                        ArticleImageView(url: article.urlToImage, scaleEffect: 1)
                             .frame(width: 256, height: 256)
-                        }
+                            .cornerRadius(12)
                         
                         VStack {
-                            Text(article.title ?? "")
-                                .bold()
-                                .foregroundStyle(.white)
+                            HStack {
+                                Spacer()
+                                Constants.Icons.bookmarkWhite
+                                    .renderingMode(.template)
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.white)
+                                    .padding(EdgeInsets(top: 24, leading: 208, bottom: 0, trailing: 24))
+                            }
+                            .frame(maxWidth: .infinity)
+                            
+                            VStack(alignment: .leading) {
+                                Text(category.rawValue)
+                                    .foregroundColor(.greyLighter)
+                                    .font(.interFont(.regular, size: 12))
+                                    .textCase(.uppercase)
+                                    .padding(EdgeInsets(top: 112, leading: 24, bottom: 0, trailing: 178))
+                                
+                                Text(article.title ?? "")
+                                    .foregroundColor(.white)
+                                    .font(.interFont(.bold, size: 16))
+                                    .frame(width: 208, alignment: .bottomLeading)
+                                    .lineLimit(2)
+                                    .truncationMode(.tail)
+                                    .padding(EdgeInsets(top: 2, leading: 24, bottom: 24, trailing: 24))
+                            }
                         }
                     }
                     .cornerRadius(12)
@@ -41,14 +55,13 @@ struct CategoryNewsCollectionView: View {
                     .onTapGesture {
                         onDetail?(article)
                     }
+                    
                 }
-
             }
         }
-        .padding(.horizontal)
     }
 }
 
 #Preview {
-    CategoryNewsCollectionView(news: [])
+    CategoryNewsCollectionView(news: [SearchArticle.previewItem], category: .business)
 }

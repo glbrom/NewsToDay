@@ -13,30 +13,30 @@ struct CategoryCollectionView: View {
     var onTapGesture: ((Category) -> Void)?
     
     var body: some View {
-        ScrollView(.horizontal) {
-            HStack {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(alignment: .center, spacing: 10) {
                 ForEach(Category.allCases) { category in
                     Text(category.rawValue)
+                        .font(.interFont(.semiBold, size: 14))
                         .foregroundStyle(
                             selectedCategory == category
                             ? .white
                             : .greyPrimary
                         )
-                        .padding(.vertical, 6)
-                        .padding(.horizontal)
+                        .padding(.vertical, 8)
+                        .padding(.horizontal, 16)
                         .background(
                             selectedCategory == category
                             ? .purplePrimary
                             : .greyLighter
                         )
-                        .clipShape(Capsule())
+                        .cornerRadius(16)
                         .onTapGesture {
                             onTapGesture?(category)
                         }
                 }
             }
         }
-        .padding(.bottom, 24)
     }
 }
 

@@ -50,6 +50,14 @@ struct MainTabView: View {
                         .stroke(Constants.Colors.greyLighter, lineWidth: 2)
                         .frame(height: 96)
                         .background(Color.clear)
+                        .overlay(
+                            Rectangle()
+                                .fill(Color.white)
+                                .cornerRadius(12)
+                                .frame(height: 16)
+                                .padding(.top, -47)
+                                .padding(.horizontal, 4)
+                        )
                 }
                 .ignoresSafeArea()
             }

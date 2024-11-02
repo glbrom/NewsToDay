@@ -8,53 +8,120 @@
 import SwiftUI
 
 struct DetailView: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
-
+    @AppStorage("isBookmarked") private var isBookmarked: Bool = false
+    
     var article: SearchArticle
     var category: Category
     
     var body: some View {
-        VStack {
-            ZStack {
-                if let url = URL(string: article.urlToImage ?? "") {
-                    AsyncImage(url: url) { img in
-                        img
-                            .resizable()
-                    } placeholder: {
-                        ZStack {
-                            ProgressView()
-                            Color.purpleLight
+        ZStack(alignment: .topLeading) {
+            ScrollView(.vertical, showsIndicators: false) {
+                ZStack {
+                    ImageDetailView(article: article)
+                    
+                    VStack(alignment: .leading) {
+                        /// Category
+                        Text(category.rawValue)
+                            .font(.interFont(.semiBold, size: 12))
+                            .foregroundColor(.white)
+                            .padding(.vertical, 8)
+                            .padding(.horizontal, 16)
+                            .background(.purplePrimary)
+                            .cornerRadius(16)
+                            .padding(.top, 174)
+                        
+                        /// Tittle
+                        Text(article.title ?? "")
+                            .font(.interFont(.bold, size: 20))
+                            .frame(width: 336, height: 100, alignment: .leading)
+                            .foregroundColor(.greyLighter)
+                            .padding(.top, 16)
+                            .padding(.trailing, 20)
+                        
+                        /// Autor
+                        if let autor = article.author {
+                            Text(autor)
+                                .font(.interFont(.semiBold, size: 16))
+                                .foregroundColor(.white)
+                                .padding(.top, 24)
+                                .padding(.leading, 6)
                         }
+                        
+                        Text("Autor")
+                            .font(.interFont(.regular, size: 14))
+                            .foregroundColor(.greyLight)
+                            .padding(.top, -2)
+                            .padding(.leading, 6)
+                            .padding(.bottom, 24)
+                        
+                        /// Results
+                        Text("Results")
+                            .font(.interFont(.semiBold, size: 16))
+                            .foregroundColor(.blackPrimary)
+                            .padding(.top, 24)
+                        
+                        /// Description
+                        Text(article.description ?? "")
+                            .font(.interFont(.regular, size: 16))
+                            .foregroundColor(.greyDark)
+                            .padding(.top, 2)
+                            .padding(.trailing, 20)
+                        
                     }
-                    .frame(height: 384)
-                } else {
-                    RoundedRectangle(cornerRadius: 12)
-                        .foregroundStyle(Color.purpleLight)
-                        .frame(height: 384)
+                    .padding(.leading, 20)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
+                
+            }
+            .ignoresSafeArea()
+            .navigationBarHidden(true)
+            
+            // Buttons
+            HStack(alignment: .top) {
+                // BackButton
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Constants.Icons.leftArrowWhite
+                        .frame(width: 24, height: 24)
+                }
+                .padding(.leading, 20)
+                
+                Spacer()
                 
                 
                 VStack {
-                    Spacer()
-                    Text(category.rawValue)
-                        .padding(.vertical, 6)
-                        .padding(.horizontal)
-                        .background(.purplePrimary)
-                        .clipShape(Capsule())
-                    Text(article.author ?? "")
-                    Text("Author")
+                    // BookmarksButton
+                    Button {
+                        isBookmarked.toggle()
+                    } label: {
+                        (isBookmarked ? Constants.Icons.bookmarkWhite : Constants.Icons.bookmarkWhite)
+                            .renderingMode(.template)
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(isBookmarked ? .purplePrimary : .white)
+                    }
+                    
+                    // SharedButton
+                    Button {
+                        //
+                    } label: {
+                        Constants.Icons.shared
+                            .frame(width: 24, height: 24)
+                            .padding(.top, 12)
+                    }
+                    
                 }
-                .padding()
+                .padding(.trailing, 24)
             }
-
-            VStack {
-                Text("Results")
-                    .font(.headline)
-                    .bold()
-                
-                Text(article.description ?? "")
-                    .font(.subheadline)
-            }
+            .padding(.top, 18)
         }
     }
+}
+
+#Preview {
+    DetailView(article: SearchArticle.previewItem, category: .business)
 }

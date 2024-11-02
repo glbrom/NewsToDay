@@ -13,6 +13,7 @@ struct ActionButtonView: View {
     var buttonText: LocalizedStringKey
     var action: () -> Void
     var action2: () -> Void
+   
     // MARK: - Body
     var body: some View {
         Button(action: {

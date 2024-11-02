@@ -22,23 +22,13 @@ struct LoginPageView: View {
     var registerText: LocalizedStringKey = "Sign Up"
     var error: String = "Error"
     var ok: String = "OK"
+   
+    // MARK: - Body
     var body: some View {
-        // MARK: - Body
            NavigationView {
                VStack {
-                   VStack(alignment: .leading) {
-                       Text(title)
-                           .foregroundColor(.blackPrimary)
-                           .font(.interFont(.semiBold, size: 24))
-                           .frame(width: 216, alignment: .topLeading)
-                           .padding(.top, 72)
-                           .offset(y: -4)
-                       
-                       Text(subtitle)
-                           .foregroundColor(.greyPrimary)
-                           .frame(width: 336, alignment: .leading)
-                   }
-                   .padding(.leading, 20)
+                   TitleWithDescription(title: title, description: subtitle)
+                       .padding(.top, 28)
                    
                    VStack(spacing: 16) {
                        CustomTextField(
@@ -63,9 +53,11 @@ struct LoginPageView: View {
                    HStack {
                        Text(noAccount)
                            .foregroundColor(.blackLighter)
+                           .font(.interFont(.medium, size: 16))
                        Button(action: {viewModel.navigateToSignUp = true}) {
                            Text(registerText)
                                .foregroundColor(.blackPrimary)
+                               .font(.interFont(.medium, size: 16))
                        }
                    }
                    .padding(.bottom, 8)

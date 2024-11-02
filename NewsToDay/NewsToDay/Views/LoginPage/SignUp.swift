@@ -26,25 +26,14 @@ struct SignUp: View {
     var matchError: String = "Passwords do not match."
     var error: String = "Error"
     var ok: String = "OK"
+   
+    // MARK: - Body
     var body: some View {
-        // MARK: - Body
+       
         NavigationView {
             VStack {
-                VStack(spacing: 16) {
-                    Text(title)
-                        .foregroundColor(.blackPrimary)
-                        .font(.interFont(.semiBold, size: 24))
-                        .frame(width: 336, alignment: .leading)
-                        .padding(.top, 72)
-                    
-                    Text(subtitle)
-                        .foregroundColor(.greyPrimary)
-                        .font(.interFont(.regular, size: 16))
-                        .frame(width: 336, alignment: .leading)
-                        .padding(.top, 8)
-                        .offset(y: -4)
-                }
-                .padding(.leading, 20)
+                TitleWithDescription(title: title, description: subtitle)
+                    .padding(.top, 28)
                 
                 VStack(spacing: 16) {
                     CustomTextField(text: $viewModel.username, icon: Constants.Icons.profile, placeholder: usernameText)
@@ -74,9 +63,11 @@ struct SignUp: View {
                 HStack {
                     Text(haveAccount)
                         .foregroundColor(.blackLighter)
+                        .font(.interFont(.medium, size: 16))
                     Button(action: { viewModel.navigateToLogin = true}) {
                         Text(signIn)
                             .foregroundColor(.blackPrimary)
+                            .font(.interFont(.medium, size: 16))
                     }
                 }
                 .padding(.bottom, 8)
