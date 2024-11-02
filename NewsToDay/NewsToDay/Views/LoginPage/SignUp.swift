@@ -36,7 +36,7 @@ struct SignUp: View {
                     .padding(.top, 28)
                 
                 VStack(spacing: 16) {
-                    CustomTextField(text: $viewModel.username, icon: Constants.Icons.profile, placeholder: usernameText)
+                    CustomTextField(text: $viewModel.username, icon: Constants.Icons.user, placeholder: usernameText)
                         .autocapitalization(.none)
                     CustomTextField(text: $viewModel.email, icon: Constants.Icons.envelope, placeholder: promptEmail)
                         .autocapitalization(.none)

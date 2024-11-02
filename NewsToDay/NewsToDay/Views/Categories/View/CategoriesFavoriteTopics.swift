@@ -13,21 +13,33 @@ struct CategoriesFavoriteTopics: View {
     
     // MARK: - Body
     var body: some View {
-        VStack {
-            TitleWithDescription(title: "Select your favorite topics", description: "Select some of your favorite topics to let us suggest better news for you.")
-                .padding(.top, 28)
-            
-            ScrollView {
-                CategoriesButtons(unselectedColor: Constants.Colors.greyLighter)
-                    .padding(.top, 32)
+        NavigationView {
+            VStack {
+                TitleWithDescription(title: "Select your favorite topics", description: "Select some of your favorite topics to let us suggest better news for you.")
+                    .padding(.top, 28)
+                
+                ScrollView {
+                    CategoriesButtons(unselectedColor: Constants.Colors.greyLighter)
+                        .padding(.top, 32)
+                }
+                
+                ActionButtonView(buttonText: "Next", action: { isMainTabViewActive = true}, action2: {})
+                    .padding(.bottom, 16)
             }
-            
-            ActionButtonView(buttonText: "Next", action: { isMainTabViewActive = true}, action2: {})
-                .padding(.bottom, 16)
+            .background(
+                Group {
+                    NavigationLink(
+                        destination: MainTabView(),
+                        isActive: $isMainTabViewActive,
+                        label: { EmptyView() }
+                    )
+                }
+            )
         }
-        .fullScreenCover(isPresented: $isMainTabViewActive, content: {
-            MainTabView()
-        })
+        .navigationBarBackButtonHidden(true)
+        //        .fullScreenCover(isPresented: $isMainTabViewActive, content: {
+        //            MainTabView()
+        //        })
     }
 }
 
