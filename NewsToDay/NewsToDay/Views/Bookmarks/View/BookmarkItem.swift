@@ -21,18 +21,22 @@ struct BookmarkItem: View {
                 .frame(width: 96, height: 96)
                 .cornerRadius(12)
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(category)
                     .foregroundColor(.greyPrimary)
                     .font(.interFont(.regular, size: 14))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.bottom, 8)
-                Text(title)
+                    .padding(.top, 4)
+                
+                Text(title )
                     .foregroundColor(.blackPrimary)
                     .font(.interFont(.semiBold, size: 16))
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .lineLimit(2)
+                    .truncationMode(.tail)
+                    .padding(.top, 6)
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 20)
     }
 }
 

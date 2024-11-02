@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CategoryNewsCollectionView: View {
-    
+    @State private var isBookmarked: Bool = false
     var news: [SearchArticle]
     var onDetail: ((SearchArticle) -> Void)?
     var category: Category
@@ -25,11 +25,21 @@ struct CategoryNewsCollectionView: View {
                         VStack {
                             HStack {
                                 Spacer()
-                                Constants.Icons.bookmarkWhite
-                                    .renderingMode(.template)
-                                    .frame(width: 24, height: 24)
-                                    .foregroundColor(.white)
-                                    .padding(EdgeInsets(top: 24, leading: 208, bottom: 0, trailing: 24))
+                                Button {
+                                    isBookmarked.toggle()
+                                } label: {
+                                    (isBookmarked ? Constants.Icons.bookmarkWhite : Constants.Icons.bookmarkWhite)
+                                        .renderingMode(.template)
+                                        .frame(width: 24, height: 24)
+                                        .foregroundColor(isBookmarked ? .purplePrimary : .white)
+                                        .padding(EdgeInsets(top: 24, leading: 208, bottom: 0, trailing: 24))
+                                }
+                                .contentShape(Rectangle())
+//                                Constants.Icons.bookmarkWhite
+//                                    .renderingMode(.template)
+//                                    .frame(width: 24, height: 24)
+//                                    .foregroundColor(.white)
+//                                    .padding(EdgeInsets(top: 24, leading: 208, bottom: 0, trailing: 24))
                             }
                             .frame(maxWidth: .infinity)
                             

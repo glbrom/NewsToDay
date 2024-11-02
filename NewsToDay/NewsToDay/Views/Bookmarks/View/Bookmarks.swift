@@ -10,7 +10,7 @@ struct Bookmarks: View {
     // MARK: - Properties
     var selectedTab = 2
     @State var isActive: Bool = false
-    @State var isSaved: Bool = false
+    @State var isSaved: Bool = true
     @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
     var mainImage: String = "city"
     var boookMarktext: LocalizedStringKey = "Bookmarks"
@@ -67,7 +67,6 @@ struct Bookmarks: View {
             
             Spacer()
         }
-        .padding(.horizontal, 20)
     }
 }
 
