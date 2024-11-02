@@ -1,5 +1,7 @@
 # NewsToDay:
 
+<img src="https://github.com/glbrom/glbrom/blob/847162bde2e4dde6a49a49be92786278f78e0942/images/NewsToDay.png" width="840">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 ## Team:
 <p align="left"> 
 <a href="https://github.com/glbrom">
