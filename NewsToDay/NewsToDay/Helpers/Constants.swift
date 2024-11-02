@@ -67,6 +67,7 @@ enum Constants {
         static let padlock = Image("padlock")
         static let eye = Image("eye")
         static let eyeSelect = Image("eye")
+        static let user = Image("user")
     }
     
     enum Backgrounds {
