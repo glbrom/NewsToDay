@@ -147,9 +147,6 @@
         }
       }
     },
-    "Author" : {
-
-    },
     "Autor" : {
 
     },
@@ -221,6 +218,9 @@
         }
       }
     },
+    "First name" : {
+
+    },
     "First to know" : {
       "localizations" : {
         "ru" : {
@@ -281,6 +281,9 @@
           }
         }
       }
+    },
+    "Last name" : {
+
     },
     "News" : {
       "localizations" : {
@@ -397,9 +400,6 @@
       }
     },
     "Terms & Conditions" : {
-
-    },
-    "The latest situation in the presidential election" : {
 
     },
     "Thousands of articles in each category" : {

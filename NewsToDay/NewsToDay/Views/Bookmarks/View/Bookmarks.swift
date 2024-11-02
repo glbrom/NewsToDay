@@ -11,8 +11,8 @@ struct Bookmarks: View {
     // MARK: - Properties
     var selectedTab = 2
     @State var isActive: Bool = false
-    @State var isSaved: Bool = false
     @AppStorage("selectedLanguage") private var language = LocalizationManager.shared.language
+    private let storageManager = StorageManager.shared
     var mainImage: String = "city"
     var boookMarktext: LocalizedStringKey = "Bookmarks"
     var article: LocalizedStringKey = "Saved articles to the library"
@@ -38,7 +38,7 @@ struct Bookmarks: View {
             }
             
             VStack {
-                if !isSaved {
+                if storageManager.isSaved {
                     VStack {
                         ZStack {
                             Circle()
@@ -77,7 +77,7 @@ struct Bookmarks: View {
         }
         .padding(.horizontal,20)
                 .onAppear {
-                            viewModel.fetchBookmarks()
+                        viewModel.fetchBookmarks()
         }
     }
 }

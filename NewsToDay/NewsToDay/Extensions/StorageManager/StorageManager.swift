@@ -13,6 +13,7 @@ final class StorageManager {
     public static let shared = StorageManager()
     private let db = Firestore.firestore()
     private let userDefaults = UserDefaults.standard
+    @Published var isSaved: Bool = false
     
     enum UserDefaultKeys {
         static let savedUsername = "savedUsername"
@@ -56,6 +57,17 @@ final class StorageManager {
                try? document.data(as: SearchArticle.self)
            }
        }
+    // Removing article if not necessary
+    func removeArticle(_ article: SearchArticle) async throws {
+        try await db.collection("articles").document(article.id).delete()
+        do {
+
+            try await db.collection("articles").document(article.id).delete()
+          print("Document successfully updated")
+        } catch {
+          print("Error updating document: \(error)")
+        }
+    }
     
    }
 

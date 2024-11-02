@@ -306,12 +306,12 @@
 			path = RegisterViewModel;
 			sourceTree = "<group>";
 		};
-		AD6C01942CCDEBC6003EABF6 /* SaveManager */ = {
+		AD6C01942CCDEBC6003EABF6 /* StorageManager */ = {
 			isa = PBXGroup;
 			children = (
 				AD6C01922CCDEBB4003EABF6 /* StorageManager.swift */,
 			);
-			path = SaveManager;
+			path = StorageManager;
 			sourceTree = "<group>";
 		};
 		AD6CEAD22CCC4F50007F2242 /* Localization */ = {
@@ -372,7 +372,7 @@
 				EB8638472CC93D2900EEE0F0 /* CustomFonts.swift */,
 				EB8587572CD57B5B00AE3A22 /* GradientImagePlaceholder.swift */,
 				EB8587592CD5C93800AE3A22 /* TextFieldAnimation.swift */,
-				AD6C01942CCDEBC6003EABF6 /* SaveManager */,
+				AD6C01942CCDEBC6003EABF6 /* StorageManager */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
