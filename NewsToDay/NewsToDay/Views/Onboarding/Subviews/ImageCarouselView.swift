@@ -15,8 +15,8 @@ struct ImageMock: Identifiable {
 private let imageMock: [ImageMock] = [
     ImageMock(image: "1"),
     ImageMock(image: "2"),
-    ImageMock(image: "1"),
-    ImageMock(image: "2")
+    ImageMock(image: "4"),
+    ImageMock(image: "3")
 ]
 
 // MARK: - ImageCarouselView
