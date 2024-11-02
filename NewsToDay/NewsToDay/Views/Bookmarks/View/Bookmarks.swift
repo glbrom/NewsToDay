@@ -75,9 +75,8 @@ struct Bookmarks: View {
             .padding(.top, 32)
             Spacer()
         }
-        .padding(.horizontal,20)
-                .onAppear {
-                        viewModel.fetchBookmarks()
+        .onAppear {
+            viewModel.fetchBookmarks()
         }
     }
 }

@@ -44,19 +44,22 @@ struct BookmarkItem: View {
                     .cornerRadius(12)
             }
             
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(article.category ?? "")
                     .foregroundColor(.greyPrimary)
                     .font(.interFont(.regular, size: 14))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.bottom, 8)
+                    .padding(.top, 4)
                 
                 Text(article.title ?? "NO title")
                     .foregroundColor(.blackPrimary)
                     .font(.interFont(.semiBold, size: 16))
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .lineLimit(2)
+                    .truncationMode(.tail)
+                    .padding(.top, 6)
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 20)
     }
 }
 
@@ -66,7 +69,7 @@ struct BookmarkItem: View {
         title: "Sample Title",
         description: "Description",
         url: "https://example.com",
-        urlToImage: "https://example.com/image.jpg",
+        urlToImage: "https://s.yimg.com/ny/api/res/1.2/1c_Y_3Nk.W2kQ932xqB1Rw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/os/creatr-uploaded-images/2024-10/bb9881f0-9657-11ef-95ea-1660b7641101",
         publishedAt: "2024-11-01",
         content: "Sample content",
         category: "Technology"
