@@ -57,9 +57,6 @@ struct Bookmarks: View {
                     ScrollView {
                         VStack {
                             BookmarkItem(image: mainImage, category: bullet, title: topic)
-                            BookmarkItem(image: mainImage, category: bullet2, title: topic2)
-                            BookmarkItem(image: mainImage, category: bullet3, title: topic3)
-                            BookmarkItem(image: mainImage, category: bullet, title: topic)
                         }
                     }
                 }
