@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct CategoryNewsCollectionView: View {
-    @State private var isBookmarked: Bool = false
+//    @State private var isBookmarked: Bool = false
+    @AppStorage("isBookmarked") private var isBookmarked: Bool = false
     var news: [SearchArticle]
     var onDetail: ((SearchArticle) -> Void)?
     var category: Category

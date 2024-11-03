@@ -15,7 +15,7 @@ enum ApiKeys: String, CaseIterable {
         case .one:
             
 //            return "6b6b13b7f72b4259af2d388984744dfb"
-            return ProcessInfo.processInfo.environment["KEY_ONE"] ?? "6b6b13b7f72b4259af2d388984744dfb"
+            return ProcessInfo.processInfo.environment["KEY_ONE"] ?? "413449df930c41fd97c254c0dbbb1f93"
             
             /* API KEYs
              413449df930c41fd97c254c0dbbb1f93
